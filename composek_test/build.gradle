@@ -49,7 +49,7 @@ android {
 dependencies {
     implementation project(':composek')
     implementation project(':basick')
-    implementation project(':ADslKit:dslk_anko')
+    implementation project(':ADslKit:anko')
     implementation project(':AXmlKit:layoutk_magnet')
 
     testImplementation 'junit:junit:4.13.2'

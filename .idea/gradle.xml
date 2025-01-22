@@ -10,13 +10,16 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../ADslKit" />
-            <option value="$PROJECT_DIR$/../ADslKit/dslk_anko" />
-            <option value="$PROJECT_DIR$/../AXmlKit" />
-            <option value="$PROJECT_DIR$/../AXmlKit/basic" />
-            <option value="$PROJECT_DIR$/../AXmlKit/layoutk_magnet" />
-            <option value="$PROJECT_DIR$/../KUtilKit" />
-            <option value="$PROJECT_DIR$/../KUtilKit/utilk_android" />
-            <option value="$PROJECT_DIR$/../KUtilKit/utilk_kotlin" />
+            <option value="$PROJECT_DIR$/../ADslKit/anko" />
+            <option value="$PROJECT_DIR$/../ALibKit_Google" />
+            <option value="$PROJECT_DIR$/../ALibKit_Google/material" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetbrains" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetbrains/kotlin_stdlib" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetbrains/kotlinx_coroutines" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetpack" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/annotation" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/core" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/databinding" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/basick" />
             <option value="$PROJECT_DIR$/basick_test" />
@@ -25,9 +28,16 @@
             <option value="$PROJECT_DIR$/blurk" />
             <option value="$PROJECT_DIR$/composek" />
             <option value="$PROJECT_DIR$/composek_test" />
+            <option value="$PROJECT_DIR$/proguardk" />
             <option value="$PROJECT_DIR$/servicek" />
             <option value="$PROJECT_DIR$/xmlk" />
-            <option value="$PROJECT_DIR$/xmlktest" />
+            <option value="$PROJECT_DIR$/xmlk_test" />
+            <option value="$PROJECT_DIR$/../AXmlKit" />
+            <option value="$PROJECT_DIR$/../AXmlKit/basic" />
+            <option value="$PROJECT_DIR$/../AXmlKit/layoutk_magnet" />
+            <option value="$PROJECT_DIR$/../KUtilKit" />
+            <option value="$PROJECT_DIR$/../KUtilKit/android" />
+            <option value="$PROJECT_DIR$/../KUtilKit/kotlin" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

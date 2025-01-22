@@ -4,16 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.blurk'
+    namespace 'com.mozhimen.proguardk'
     compileSdk 34
 
     defaultConfig {
         minSdk 19
-        multiDexEnabled true
-
-        //renderscript
-        renderscriptTargetApi 18
-        renderscriptSupportModeEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -35,9 +30,8 @@ android {
 }
 
 dependencies {
-    implementation project(project.path.replace(project.name, '') + ':basick')
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }

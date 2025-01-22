@@ -3,6 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ADslKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ALibKit_Google" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ALibKit_Jetbrains" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ALibKit_Jetpack" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../AXmlKit" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../KUtilKit" vcs="Git" />
   </component>

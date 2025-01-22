@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="StyleK_ImageShapeable_Shape" />
 
-    <!--ShapeableImageView 左上左下 圆角 -->
-    <style name="StyleK_ImageShapeable_Shape.Rounded">
+    <!--///////////////////////////////////////////////////////-->
+
+    <!--https://blog.csdn.net/yechaoa/article/details/117339632-->
+    <style name="StyleK_ImageShapeable_Appearance" />
+
+    <style name="StyleK_ImageShapeable_Appearance.Rounded">
         <item name="cornerFamily">rounded</item>
     </style>
 
-    <style name="StyleK_ImageShapeable_Shape.Rounded.Left">
+    <style name="StyleK_ImageShapeable_Appearance.Rounded.All">
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <!--ShapeableImageView 左上左下 圆角 -->
+    <style name="StyleK_ImageShapeable_Appearance.Rounded.Left">
         <item name="cornerSizeTopLeft">10dp</item>
         <item name="cornerSizeBottomLeft">10dp</item>
+    </style>
+
+    <style name="StyleK_ImageShapeable_Appearance.Rounded.Leaf">
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
+
+    <style name="StyleK_ImageShapeable_Appearance.Rounded.Circle">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="StyleK_ImageShapeable_Appearance.Rounded.CircleTop">
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+    </style>
+
+    <!--///////////////////////////////////////////////////////-->
+
+
+    <style name="StyleK_ImageShapeable_Appearance.Cut">
+        <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="StyleK_ImageShapeable_Appearance.Cut.All">
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <!--菱形-->
+    <style name="StyleK_ImageShapeable_Appearance.Cut.Rhombus">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!--六边形hexagon-->
+    <style name="StyleK_ImageShapeable_Appearance.Cut.Hexagon">
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="cornerSizeBottomLeft">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
     </style>
 </resources>

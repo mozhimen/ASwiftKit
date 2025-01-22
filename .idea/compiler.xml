@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
+      <module name="ASwiftKit.ADslKit.dslk_anko" target="17" />
+      <module name="SwiftKit.ADslKit.dslk_anko" target="17" />
       <module name="SwiftKit.AManifestKit_XXPermissions.library" target="17" />
       <module name="SwiftKit.AManifestKit_XXPermissions.manifestk_xxpermissions" target="17" />
       <module name="SwiftKit.ANavigateKit.navigatek_navigation" target="17" />
@@ -11,15 +13,27 @@
       <module name="SwiftKit.AStackKit.stackk_process" target="17" />
       <module name="SwiftKit.ATaskKit.taskk_executor" target="17" />
       <module name="SwiftKit.AUICoreKit.adapterk" target="17" />
+      <module name="SwiftKit.AXmlKit.basic" target="17" />
       <module name="SwiftKit.AXmlKit.layoutk" target="17" />
       <module name="SwiftKit.AXmlKit.layoutk_blur" target="17" />
+      <module name="SwiftKit.AXmlKit.layoutk_magnet" target="17" />
       <module name="SwiftKit.AXmlKit.recyclerk" target="17" />
       <module name="SwiftKit.AXmlKit.vhk" target="17" />
+      <module name="SwiftKit.basick" target="17" />
+      <module name="SwiftKit.basick_test" target="17" />
+      <module name="SwiftKit.bindk" target="17" />
+      <module name="SwiftKit.bindk_test" target="17" />
+      <module name="SwiftKit.blurk" target="17" />
+      <module name="SwiftKit.composek" target="17" />
+      <module name="SwiftKit.composek_test" target="17" />
       <module name="SwiftKit.composektest" target="17" />
       <module name="SwiftKit.dslk" target="17" />
       <module name="SwiftKit.JUtilKit.utilk_android" target="17" />
       <module name="SwiftKit.mvvmk" target="17" />
+      <module name="SwiftKit.servicek" target="17" />
       <module name="SwiftKit.stackk" target="17" />
+      <module name="SwiftKit.xmlk" target="17" />
+      <module name="SwiftKit.xmlktest" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

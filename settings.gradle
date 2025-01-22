@@ -19,26 +19,42 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SwiftKit"
+rootProject.name = "ASwiftKit"
 include ':blurk'
 include ':basick'
 include ':basick_test'
 include ':xmlk'
-include ':xmlktest'
+include ':xmlk_test'
 include ':composek'
+include ':composek_test'
 include ':servicek'
 include ':bindk'
 include ':bindk_test'
-include ':composek_test'
+include ':proguardk'
+//ALibKit_Google
+include ":ALibKit_Google"
+project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
+include ':ALibKit_Google:material'
+//ALibKit_Jetbrains
+include ":ALibKit_Jetbrains"
+project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
+include ':ALibKit_Jetbrains:kotlin_stdlib'
+include ':ALibKit_Jetbrains:kotlinx_coroutines'
+//ALibKit_Jetpack
+include ":ALibKit_Jetpack"
+project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
+include ':ALibKit_Jetpack:databinding'
+include ':ALibKit_Jetpack:annotation'
+include ':ALibKit_Jetpack:core'
 //KUtilKit
 include ":KUtilKit"
 project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:utilk_android'
-include ':KUtilKit:utilk_kotlin'
+include ':KUtilKit:android'
+include ':KUtilKit:kotlin'
 //ADslKit
 include ":ADslKit"
 project(':ADslKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ADslKit")
-include ':ADslKit:dslk_anko'
+include ':ADslKit:anko'
 //AXmlKit
 include ":AXmlKit"
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
