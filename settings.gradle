@@ -22,14 +22,14 @@ dependencyResolutionManagement {
 rootProject.name = "ASwiftKit"
 include ':blurk'
 include ':basick'
-include ':basick_test'
+include ':basick:test'
 include ':xmlk'
-include ':xmlk_test'
+include ':xmlk:test'
 include ':composek'
-include ':composek_test'
+include ':composek:test'
 include ':servicek'
 include ':bindk'
-include ':bindk_test'
+include ':bindk:test'
 include ':proguardk'
 //ALibKit_Google
 include ":ALibKit_Google"

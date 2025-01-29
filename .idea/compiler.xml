@@ -3,6 +3,10 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="ASwiftKit.ADslKit.dslk_anko" target="17" />
+      <module name="ASwiftKit.basick_test" target="17" />
+      <module name="ASwiftKit.bindk_test" target="17" />
+      <module name="ASwiftKit.composek_test" target="17" />
+      <module name="ASwiftKit.xmlk_test" target="17" />
       <module name="SwiftKit.ADslKit.dslk_anko" target="17" />
       <module name="SwiftKit.AManifestKit_XXPermissions.library" target="17" />
       <module name="SwiftKit.AManifestKit_XXPermissions.manifestk_xxpermissions" target="17" />

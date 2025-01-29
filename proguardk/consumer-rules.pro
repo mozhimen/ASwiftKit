@@ -57,6 +57,9 @@
 }
 #--------------------------------分割线----------------------------------
 # java
+-dontwarn javax.annotation.**
+-dontwarn java.lang.invoke.**
+-dontwarn **$$Lambda$*
 # 保留枚举类不被混淆
 -keepclassmembers enum * {
     public static **[] values();
