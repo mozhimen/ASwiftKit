@@ -58,5 +58,5 @@ include ':ADslKit:anko'
 //AXmlKit
 include ":AXmlKit"
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
-include ':AXmlKit:layoutk_magnet'
+include ':AXmlKit:layoutk:magnet'
 include ':AXmlKit:basic'
