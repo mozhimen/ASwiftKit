@@ -3,6 +3,7 @@
 <!--    <style name="ThemeK_MaterialDay" parent="Theme.MaterialComponents.DayNight" />-->
 <!--    <style name="ThemeK_MaterialDayNoActionBridge" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge" />-->
 
+    <style name="ThemeK_MaterialComponents" parent="Theme.MaterialComponents" />
     <style name="ThemeK_MaterialComponents_DayNight" parent="Theme.MaterialComponents.DayNight" />
     <style name="ThemeK_MaterialComponents_DayNight_NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
     <style name="ThemeK_MaterialComponents_DayNight_NoActionBar_Bridge" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge" />

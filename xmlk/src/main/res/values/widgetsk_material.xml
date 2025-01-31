@@ -8,4 +8,11 @@
     <style name="WidgetK_MaterialComponents_Button_TextButton" parent="@style/Widget.MaterialComponents.Button.TextButton" />
     <style name="WidgetK_MaterialComponents_Button_OutlinedButton" parent="@style/Widget.MaterialComponents.Button.OutlinedButton" />
     <style name="WidgetK_MaterialComponents_Button_OutlinedButton_Icon" parent="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon" />
+
+    <!--////////////////////////////////////////////////////////////////////////////////////-->
+
+    <style name="WidgetK_MaterialComponents_Chip_Entry" parent="@style/Widget.MaterialComponents.Chip.Entry" />
+    <style name="WidgetK_MaterialComponents_Chip_Action" parent="@style/Widget.MaterialComponents.Chip.Action" />
+    <style name="WidgetK_MaterialComponents_Chip_Choice" parent="@style/Widget.MaterialComponents.Chip.Choice" />
+    <style name="WidgetK_MaterialComponents_Chip_Filter" parent="@style/Widget.MaterialComponents.Chip.Filter" />
 </resources>

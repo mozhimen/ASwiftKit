@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="StyleK_ChipGroup">
+        <item name="chipSpacingHorizontal">@dimen/dp_009</item>
+        <item name="chipSpacingVertical">@dimen/dp_008</item>
+        <item name="singleSelection">true</item>
+    </style>
+
+    <style name="StyleK_Chip">
+        <item name="android:textColor">@color/cok_black</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="theme">@style/ThemeK_MaterialComponents</item>
+        <item name="chipBackgroundColor">@color/cok_white</item>
+        <item name="chipMinHeight">@dimen/dp_028</item>
+        <item name="chipMinTouchTargetSize">@dimen/dp_000</item>
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+    </style>
+
+    <style name="StyleK_Chip.Default" />
+
+    <style name="StyleK_Chip.Default.Icon">
+        <item name="textStartPadding">0dp</item>
+        <item name="textEndPadding">0dp</item>
+    </style>
+
+    <style name="StyleK_Chip.Action" parent="WidgetK_MaterialComponents_Chip_Action">
+        <item name="android:textColor">@color/cok_black</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="theme">@style/ThemeK_MaterialComponents</item>
+        <item name="chipBackgroundColor">@color/cok_white</item>
+        <item name="chipMinHeight">@dimen/dp_028</item>
+        <item name="chipMinTouchTargetSize">@dimen/dp_000</item>
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+    </style>
+
+    <style name="StyleK_Chip.Choice" parent="WidgetK_MaterialComponents_Chip_Choice">
+        <item name="android:textColor">@color/cok_black</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="theme">@style/ThemeK_MaterialComponents</item>
+        <item name="chipBackgroundColor">@color/cok_white</item>
+        <item name="chipMinHeight">@dimen/dp_028</item>
+        <item name="chipMinTouchTargetSize">@dimen/dp_000</item>
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+    </style>
+
+    <style name="StyleK_Chip.Entry" parent="WidgetK_MaterialComponents_Chip_Entry">
+        <item name="android:textColor">@color/cok_black</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="theme">@style/ThemeK_MaterialComponents</item>
+        <item name="chipBackgroundColor">@color/cok_white</item>
+        <item name="chipMinHeight">@dimen/dp_028</item>
+        <item name="chipMinTouchTargetSize">@dimen/dp_000</item>
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+    </style>
+
+    <style name="StyleK_Chip.Filter" parent="WidgetK_MaterialComponents_Chip_Filter">
+        <item name="android:textColor">@color/cok_black</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="theme">@style/ThemeK_MaterialComponents</item>
+        <item name="chipBackgroundColor">@color/cok_white</item>
+        <item name="chipMinHeight">@dimen/dp_028</item>
+        <item name="chipMinTouchTargetSize">@dimen/dp_000</item>
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+    </style>
+</resources>
