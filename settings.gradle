@@ -28,8 +28,9 @@ include ':xmlk:test'
 include ':composek'
 include ':composek:test'
 include ':servicek'
-include ':bindk'
-include ':bindk:test'
+include ':uik:databinding'
+include ':uik:databinding:test'
+include ':uik:compose'
 include ':proguardk'
 //ALibKit_Google
 include ":ALibKit_Google"
@@ -60,3 +61,4 @@ include ":AXmlKit"
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
 include ':AXmlKit:layoutk:magnet'
 include ':AXmlKit:basic'
+include ':uik:compose:test'

@@ -1,19 +1,18 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace "com.mozhimen.basicktest"
+    namespace 'com.mozhimen.uik.compose.test'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.mozhimen.basicktest"
-        minSdk 24
-        targetSdk 25
+        applicationId "com.mozhimen.uik.compose.test"
+        minSdk 21
+        targetSdk 34
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,20 +30,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
-        dataBinding true
-    }
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
+    buildFeatures.compose = true
+    composeOptions.kotlinCompilerExtensionVersion = "1.5.10"
 }
 
 dependencies {
-    implementation project(':uik:databinding')
-    implementation project(':xmlk')
+    implementation project(':basick')
+    implementation project(':uik:compose')
 
-    //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

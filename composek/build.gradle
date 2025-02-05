@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-    implementation project(':KUtilKit:android')
+    api project(project.path.replace(project.name,'')+":basick")
 
     api 'androidx.activity:activity-compose:1.8.2'
 
