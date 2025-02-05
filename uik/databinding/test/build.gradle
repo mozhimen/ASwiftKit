@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.bindk.test'
+    namespace 'com.mozhimen.uik.databinding.test'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.mozhimen.bindk.test"
+        applicationId "com.mozhimen.uik.databinding.test"
         minSdk 21
         targetSdk 34
         versionCode 1

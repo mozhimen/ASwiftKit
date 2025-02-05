@@ -1,12 +1,12 @@
-package com.mozhimen.bindk.test
+package com.mozhimen.uik.databinding.test
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mozhimen.bindk.test.databinding.FragmentMainBinding
-import com.mozhimen.bindk.utils.viewBinding
+import com.mozhimen.uik.databinding.test.databinding.FragmentMainBinding
+import com.mozhimen.uik.databinding.utils.viewBinding
 
 /**
  * @ClassName MainFragment

@@ -1,4 +1,4 @@
-package com.mozhimen.bindk.test
+package com.mozhimen.uik.databinding.test
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.mozhimen.uik.databinding.bases.viewbinding.activity.BaseActivityVB
-import com.mozhimen.bindk.test.databinding.ActivityMainBinding
+import com.mozhimen.uik.databinding.test.databinding.ActivityMainBinding
 import com.mozhimen.uik.databinding.utils.viewBinding
 
 class MainActivity : AppCompatActivity() {

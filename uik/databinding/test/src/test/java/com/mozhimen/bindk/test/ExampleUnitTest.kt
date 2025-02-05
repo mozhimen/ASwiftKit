@@ -1,4 +1,4 @@
-package com.mozhimen.bindk.test
+package com.mozhimen.uik.databinding.test
 
 import org.junit.Test
 
