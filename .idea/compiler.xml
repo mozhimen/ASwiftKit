@@ -5,6 +5,7 @@
       <module name="ASwiftKit.ADslKit.dslk_anko" target="17" />
       <module name="ASwiftKit.AXmlKit.layoutk_magnet" target="17" />
       <module name="ASwiftKit.basick_test" target="17" />
+      <module name="ASwiftKit.bindk" target="17" />
       <module name="ASwiftKit.bindk_test" target="17" />
       <module name="ASwiftKit.compose" target="17" />
       <module name="ASwiftKit.composek_test" target="17" />

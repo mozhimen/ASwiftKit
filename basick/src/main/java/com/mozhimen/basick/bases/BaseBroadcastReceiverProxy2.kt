@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.mozhimen.basick.utils.runOnMainThread
 import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
 import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
+import com.mozhimen.kotlin.lintk.optins.OApiCall_BindViewLifecycle
 
 
 /**
@@ -15,6 +16,7 @@ import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
+@OApiCall_BindViewLifecycle
 @OApiCall_BindLifecycle
 @OApiInit_ByLazy
 open class BaseBroadcastReceiverProxy2 : BaseWakeBefDestroyLifecycleObserver {

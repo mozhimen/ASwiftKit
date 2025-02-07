@@ -54,6 +54,7 @@
 -keepclassmembers class * {
     void *(**On*Event);
     void *(**On*Listener);
+    void *(**I*Listener);
 }
 #--------------------------------分割线----------------------------------
 # java

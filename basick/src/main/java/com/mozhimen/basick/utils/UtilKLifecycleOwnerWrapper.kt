@@ -1,11 +1,15 @@
 package com.mozhimen.basick.utils
 
+import android.app.Activity
+import android.app.Dialog
+import android.content.Context
+import android.widget.PopupWindow
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.mozhimen.kotlin.elemk.commons.ISuspendExt_Listener
-import com.mozhimen.kotlin.utilk.java.lang.UtilKThread
 import com.mozhimen.kotlin.utilk.java.lang.UtilKThreadWrapper
 import com.mozhimen.kotlin.utilk.kotlinx.coroutines.UtilKCoroutineScope
 import kotlinx.coroutines.CoroutineScope
@@ -20,33 +24,50 @@ import kotlin.coroutines.EmptyCoroutineContext
  * @Date 2023/5/12 14:47
  * @Version 1.0
  */
+
+fun LifecycleOwner.requireContext(): Context =
+    UtilKLifecycleOwnerWrapper.requireContext(this)
+
+////////////////////////////////////////////////////////////////////
+
 fun LifecycleOwner.runOnMainScope(block: ISuspendExt_Listener<CoroutineScope>) {
-    UtilKLifecycleOwner.runOnMainScope(this, block)
+    UtilKLifecycleOwnerWrapper.runOnMainScope(this, block)
 }
 
 fun LifecycleOwner.runOnBackScope(block: ISuspendExt_Listener<CoroutineScope>) {
-    UtilKLifecycleOwner.runOnBackScope(this, block)
+    UtilKLifecycleOwnerWrapper.runOnBackScope(this, block)
 }
 
 ////////////////////////////////////////////////////////////////////
 
 fun LifecycleOwner.runOnMainThread(block: ISuspendExt_Listener<CoroutineScope>) {
-    UtilKLifecycleOwner.runOnMainThread(this, block)
+    UtilKLifecycleOwnerWrapper.runOnMainThread(this, block)
 }
 
 fun LifecycleOwner.runOnBackThread(block: ISuspendExt_Listener<CoroutineScope>) {
-    UtilKLifecycleOwner.runOnBackThread(this, block)
+    UtilKLifecycleOwnerWrapper.runOnBackThread(this, block)
 }
 
 ////////////////////////////////////////////////////////////////////
 
 fun LifecycleOwner.runOnLifecycleState(state: Lifecycle.State, coroutineContext: CoroutineContext = EmptyCoroutineContext, block: ISuspendExt_Listener<CoroutineScope>) {
-    UtilKLifecycleOwner.runOnLifecycleState(this, state, coroutineContext, block)
+    UtilKLifecycleOwnerWrapper.runOnLifecycleState(this, state, coroutineContext, block)
 }
 
 ////////////////////////////////////////////////////////////////////
 
-object UtilKLifecycleOwner {
+object UtilKLifecycleOwnerWrapper {
+    @JvmStatic
+    fun requireContext(lifecycleOwner: LifecycleOwner): Context =
+        when (lifecycleOwner) {
+            is Activity -> lifecycleOwner
+            is Fragment -> lifecycleOwner.requireContext()
+            is Dialog -> lifecycleOwner.context
+            is PopupWindow -> lifecycleOwner.contentView.context
+            else -> throw Exception("hast context")
+        }
+
+    ////////////////////////////////////////////////////////////////////
 
     @JvmStatic
     fun runOnMainScope(lifecycleOwner: LifecycleOwner, block: ISuspendExt_Listener<CoroutineScope>) {
@@ -77,7 +98,7 @@ object UtilKLifecycleOwner {
         lifecycleOwner: LifecycleOwner,
         state: Lifecycle.State,
         coroutineContext: CoroutineContext = EmptyCoroutineContext,
-        block: ISuspendExt_Listener<CoroutineScope>
+        block: ISuspendExt_Listener<CoroutineScope>,
     ) {
         runOnLifecycleState(lifecycleOwner, lifecycleOwner.lifecycleScope, state, coroutineContext, block)
     }
@@ -88,7 +109,7 @@ object UtilKLifecycleOwner {
         coroutineScope: CoroutineScope,
         state: Lifecycle.State,
         coroutineContext: CoroutineContext = EmptyCoroutineContext,
-        block: ISuspendExt_Listener<CoroutineScope>
+        block: ISuspendExt_Listener<CoroutineScope>,
     ) {
         coroutineScope.launch(coroutineContext) {
             lifecycleOwner.repeatOnLifecycle(state) {
