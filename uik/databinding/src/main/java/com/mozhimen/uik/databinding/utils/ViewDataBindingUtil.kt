@@ -15,7 +15,7 @@ import kotlin.Exception
  * @Date 2022/10/22 22:19
  * @Version 1.0
  */
-object UtilKViewDataBinding {
+object ViewDataBindingUtil {
     @JvmStatic
     @Suppress(CSuppress.UNCHECKED_CAST)
     fun <VDB : ViewDataBinding> get_ofClass(clazz: Class<*>, layoutInflater: LayoutInflater/*, index: Int = 0*/): VDB =

@@ -6,12 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
-import androidx.viewbinding.ViewBinding
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBAny
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBDialog
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBFragment
-import com.mozhimen.uik.databinding.impls.viewdatabinding.DelegateVDBView
 
 /**
  * @ClassName UtilKViewDataBindingWrapper
@@ -21,20 +15,20 @@ import com.mozhimen.uik.databinding.impls.viewdatabinding.DelegateVDBView
  * @Version 1.0
  */
 inline fun <reified VDB : ViewDataBinding> ComponentActivity.viewDataBinding(): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity<ComponentActivity, VDB> =
-    UtilKViewDataBindingWrapper.viewDataBinding<VDB>(this)
+    ViewDataBindingWrapperUtil.viewDataBinding<VDB>(this)
 
 inline fun <reified VDB : ViewDataBinding> Fragment.viewDataBinding(): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBFragment<VDB> =
-    UtilKViewDataBindingWrapper.viewDataBinding<VDB>(this)
+    ViewDataBindingWrapperUtil.viewDataBinding<VDB>(this)
 
 inline fun <D, reified VDB : ViewDataBinding> D.viewDataBinding(): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBDialog<D, VDB> where  D : Dialog, D : LifecycleOwner =
-    UtilKViewDataBindingWrapper.viewDataBinding<D, VDB>(this)
+    ViewDataBindingWrapperUtil.viewDataBinding<D, VDB>(this)
 
 inline fun <reified VDB : ViewDataBinding> LifecycleOwner.viewDataBinding(view: View): com.mozhimen.uik.databinding.impls.viewdatabinding.DelegateVDBView<VDB> =
-    UtilKViewDataBindingWrapper.viewDataBinding(view, this)
+    ViewDataBindingWrapperUtil.viewDataBinding(view, this)
 
 //////////////////////////////////////////////////////////////////
 
-object UtilKViewDataBindingWrapper {
+object ViewDataBindingWrapperUtil {
     inline fun <reified VDB : ViewDataBinding> viewDataBinding(componentActivity: ComponentActivity): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity<ComponentActivity, VDB> =
         com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity(VDB::class.java, componentActivity)
 

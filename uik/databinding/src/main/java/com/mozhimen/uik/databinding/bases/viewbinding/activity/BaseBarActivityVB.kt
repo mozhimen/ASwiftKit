@@ -6,7 +6,6 @@ import androidx.viewbinding.ViewBinding
 import com.mozhimen.basick.bases.BaseBarActivity
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
-import com.mozhimen.uik.databinding.utils.UtilKViewBinding
 
 /**
  * @ClassName BaseBarActivityVB
@@ -16,7 +15,7 @@ import com.mozhimen.uik.databinding.utils.UtilKViewBinding
  */
 abstract class BaseBarActivityVB<VB : ViewBinding> : BaseBarActivity() {
     protected val vdb: VB by lazy_ofNone {
-        com.mozhimen.uik.databinding.utils.UtilKViewBinding.get_ofClass<VB>(this::class.java, layoutInflater/*, 0*/)
+        com.mozhimen.uik.databinding.utils.ViewBindingUtil.get_ofClass<VB>(this::class.java, layoutInflater/*, 0*/)
     }
 
     ///////////////////////////////////////////////////////////////

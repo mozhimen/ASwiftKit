@@ -6,12 +6,11 @@ import androidx.viewbinding.ViewBinding
 import com.mozhimen.kotlin.elemk.androidx.appcompat.bases.BaseActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
-import com.mozhimen.uik.databinding.utils.UtilKViewBinding
 
 abstract class BaseActivityVB<VB : ViewBinding> : BaseActivity(), IActivity {
 
     protected val vb: VB by lazy_ofNone {
-        com.mozhimen.uik.databinding.utils.UtilKViewBinding.get_ofClass(this::class.java, layoutInflater/*, 0*/)
+        com.mozhimen.uik.databinding.utils.ViewBindingUtil.get_ofClass(this::class.java, layoutInflater/*, 0*/)
     }
 
     ///////////////////////////////////////////////////////////////

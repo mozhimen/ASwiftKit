@@ -14,7 +14,7 @@ import com.mozhimen.kotlin.utilk.java.lang.UtilKType
  * @Date 2024/3/2 15:47
  * @Version 1.0
  */
-object UtilKViewBinding {
+object ViewBindingUtil {
     @JvmStatic
     @Suppress(CSuppress.UNCHECKED_CAST)
     fun <VB : ViewBinding> get_ofClass(clazz: Class<*>, layoutInflater: LayoutInflater/*, index: Int = 0*/): VB =

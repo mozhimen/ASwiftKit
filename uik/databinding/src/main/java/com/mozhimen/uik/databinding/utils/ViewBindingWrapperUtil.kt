@@ -5,10 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBAny
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBDialog
-import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBFragment
 
 /**
  * @ClassName UtilKViewDataBindingWrapper
@@ -18,20 +14,20 @@ import com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBFragment
  * @Version 1.0
  */
 inline fun <reified VB : ViewBinding> ComponentActivity.viewBinding(): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity<ComponentActivity, VB> =
-    UtilKViewBindingWrapper.viewBinding<VB>(this)
+    ViewBindingWrapperUtil.viewBinding<VB>(this)
 
 inline fun <reified VB : ViewBinding> Fragment.viewBinding(): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBFragment<VB> =
-    UtilKViewBindingWrapper.viewBinding<VB>(this)
+    ViewBindingWrapperUtil.viewBinding<VB>(this)
 
 inline fun <D, reified VB : ViewBinding> D.viewBinding(): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBDialog<D, VB> where  D : Dialog, D : LifecycleOwner =
-    UtilKViewBindingWrapper.viewBinding<D, VB>(this)
+    ViewBindingWrapperUtil.viewBinding<D, VB>(this)
 
 inline fun <reified VB : ViewBinding> LifecycleOwner.viewBinding(): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBAny<VB> =
-    UtilKViewBindingWrapper.viewBinding(this)
+    ViewBindingWrapperUtil.viewBinding(this)
 
 //////////////////////////////////////////////////////////////////
 
-object UtilKViewBindingWrapper {
+object ViewBindingWrapperUtil {
     inline fun <reified VB : ViewBinding> viewBinding(componentActivity: ComponentActivity): com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity<ComponentActivity, VB> =
         com.mozhimen.uik.databinding.impls.viewbinding.DelegateVBActivity(VB::class.java, componentActivity)
 

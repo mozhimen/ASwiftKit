@@ -11,12 +11,11 @@ import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IFragment
 import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseFragment
 import com.mozhimen.kotlin.utilk.androidx.fragment.UtilKFragment
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
-import com.mozhimen.uik.databinding.utils.UtilKViewBinding
 
 open class BaseFragmentVB<VB : ViewBinding> : BaseFragment(), IActivity, IFragment {
 
     protected val vb: VB by lazy_ofNone {
-        com.mozhimen.uik.databinding.utils.UtilKViewBinding.get_ofClass(this::class.java, layoutInflater/*, 0*/)
+        com.mozhimen.uik.databinding.utils.ViewBindingUtil.get_ofClass(this::class.java, layoutInflater/*, 0*/)
     }
 
     //////////////////////////////////////////////////////////////////////////////

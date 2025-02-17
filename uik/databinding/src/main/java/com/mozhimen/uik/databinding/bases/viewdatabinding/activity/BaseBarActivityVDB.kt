@@ -5,7 +5,7 @@ import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
 import com.mozhimen.basick.bases.BaseBarActivity
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
-import com.mozhimen.uik.databinding.utils.UtilKViewDataBinding
+import com.mozhimen.uik.databinding.utils.ViewDataBindingUtil
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
 
 /**
@@ -16,7 +16,7 @@ import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
  */
 abstract class BaseBarActivityVDB<VDB : ViewDataBinding> : BaseBarActivity() {
     protected val vdb: VDB by lazy_ofNone {
-        UtilKViewDataBinding.get_ofClass<VDB>(this::class.java, layoutInflater/*, 0*/).apply {
+        ViewDataBindingUtil.get_ofClass<VDB>(this::class.java, layoutInflater/*, 0*/).apply {
             lifecycleOwner = this@BaseBarActivityVDB
         }
     }

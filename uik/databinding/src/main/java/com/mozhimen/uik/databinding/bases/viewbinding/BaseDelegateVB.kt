@@ -5,7 +5,6 @@ import androidx.annotation.CallSuper
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
 import com.mozhimen.basick.utils.addObserverOnDestroy
-import com.mozhimen.uik.databinding.utils.UtilKViewBinding
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.kotlin.utilk.commons.IUtilK
 import com.mozhimen.kotlin.utilk.java.lang.UtilKMethod
@@ -35,7 +34,7 @@ abstract class BaseDelegateVB<L : LifecycleOwner, VB : ViewBinding>(
         UtilKMethod.getDeclared_invoke_throw(_obj!!, "getLayoutInflater", arrayOf(), thisRef) as? LayoutInflater ?: throw NullPointerException("getLayoutInflater is null")
 
     open fun getViewBinding(thisRef: L): VB =
-        com.mozhimen.uik.databinding.utils.UtilKViewBinding.get(_clazz, getLayoutInflater(thisRef))
+        com.mozhimen.uik.databinding.utils.ViewBindingUtil.get(_clazz, getLayoutInflater(thisRef))
 
     ///////////////////////////////////////////////////////////////////////
 

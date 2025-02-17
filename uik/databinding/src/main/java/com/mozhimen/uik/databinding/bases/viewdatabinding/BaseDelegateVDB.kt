@@ -2,8 +2,6 @@ package com.mozhimen.uik.databinding.bases.viewdatabinding
 
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LifecycleOwner
-import com.mozhimen.uik.databinding.bases.viewbinding.BaseDelegateVB
-import com.mozhimen.uik.databinding.utils.UtilKViewDataBinding
 import com.mozhimen.kotlin.utilk.commons.IUtilK
 
 /**
@@ -24,7 +22,7 @@ abstract class BaseDelegateVDB<T : LifecycleOwner, VDB : ViewDataBinding>(
     //////////////////////////////////////////////////////////////////////////////
 
     override fun getViewBinding(thisRef: T): VDB {
-        return com.mozhimen.uik.databinding.utils.UtilKViewDataBinding.get<VDB>(_clazz, getLayoutInflater(thisRef)).apply {
+        return com.mozhimen.uik.databinding.utils.ViewDataBindingUtil.get<VDB>(_clazz, getLayoutInflater(thisRef)).apply {
             lifecycleOwner = getViewDataBindingLifecycleOwner()
         }
     }

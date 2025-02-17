@@ -1,7 +1,6 @@
 package com.mozhimen.uik.databinding.bases.viewdatabinding.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.databinding.ViewDataBinding
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IFragment
 import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseFragment
-import com.mozhimen.uik.databinding.utils.UtilKViewDataBinding
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.kotlin.utilk.androidx.fragment.UtilKFragment
 
@@ -28,7 +26,7 @@ open class BaseFragmentVDB<VDB : ViewDataBinding> : BaseFragment(), IActivity, I
     //@warn 如果子类可以继承, 这里子类的VB一定要放置在第一个
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         inflateView(container)
-        _vdb = com.mozhimen.uik.databinding.utils.UtilKViewDataBinding.get_ofClass<VDB>(this::class.java, inflater, container/*, 0*/).apply {
+        _vdb = com.mozhimen.uik.databinding.utils.ViewDataBindingUtil.get_ofClass<VDB>(this::class.java, inflater, container/*, 0*/).apply {
             lifecycleOwner = viewLifecycleOwner
         }
         return vdb.root
