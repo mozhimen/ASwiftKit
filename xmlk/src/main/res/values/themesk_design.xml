@@ -7,7 +7,11 @@
 
     <style name="ThemeK_Design_Light_BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog" />
 
-    <style name="ThemeK_Design_Light_BottomSheetDialog.CornerRounded" parent="Theme.Design.Light.BottomSheetDialog">
+    <style name="ThemeK_Design_Light_BottomSheetDialog.CornerRounded">
+        <item name="bottomSheetStyle">@style/WidgetK_Design_BottomSheet_Modal</item>
+    </style>
+
+    <style name="ThemeK_Design_Light_BottomSheetDialog.Transparent">
         <item name="bottomSheetStyle">@style/WidgetK_Design_BottomSheet_Modal.Transparent</item>
     </style>
 </resources>
