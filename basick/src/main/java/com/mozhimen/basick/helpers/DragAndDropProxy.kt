@@ -10,7 +10,7 @@ import com.mozhimen.kotlin.elemk.commons.IAA_Listener
 import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
 import com.mozhimen.kotlin.utilk.android.os.UtilKBuildVersion
 import com.mozhimen.kotlin.utilk.android.util.e
-import com.mozhimen.kotlin.utilk.android.view.UtilKViewLeak
+import com.mozhimen.kotlin.utilk.android.view.UtilKViewWrapper
 
 /**
  * @ClassName DragAndDropProxy
@@ -70,7 +70,7 @@ class DragAndDropProxy : BaseWakeBefPauseLifecycleObserver() {
 
     override fun onPause(owner: LifecycleOwner) {
         try {
-            for (view in _viewList) UtilKViewLeak.fixLeak_ofDragChild(view.first, view.second)
+            for (view in _viewList) UtilKViewWrapper.fixLeak_ofDragChild(view.first, view.second)
             _viewList.clear()
         } catch (e: Exception) {
             e.printStackTrace()

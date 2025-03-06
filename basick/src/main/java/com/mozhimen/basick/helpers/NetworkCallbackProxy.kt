@@ -12,6 +12,7 @@ import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
 import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
 import com.mozhimen.kotlin.lintk.optins.permission.OPermission_ACCESS_NETWORK_STATE
 import com.mozhimen.kotlin.elemk.android.cons.CPermission
+import com.mozhimen.kotlin.lintk.optins.OApiCall_BindViewLifecycle
 import com.mozhimen.kotlin.utilk.android.net.UtilKConnectivityManager
 import com.mozhimen.kotlin.utilk.android.os.UtilKBuildVersion
 
@@ -21,6 +22,7 @@ import com.mozhimen.kotlin.utilk.android.os.UtilKBuildVersion
  * @Author Mozhimen & Kolin
  * @Version 1.0
  */
+@OApiCall_BindViewLifecycle
 @OPermission_ACCESS_NETWORK_STATE
 @OApiCall_BindLifecycle
 @OApiInit_ByLazy

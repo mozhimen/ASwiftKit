@@ -10,6 +10,7 @@
     <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
 
     <style name="ThemeK_AppCompat_Light_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar" />
+
     <style name="ThemeK_AppCompat_Light_NoActionBar.Translucent">
         <!--设置状态栏半透明状态, true为半透明, false为不透明-->
         <item name="android:windowTranslucentStatus">true</item>
@@ -18,6 +19,17 @@
 
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
+    <style name="ThemeK_AppCompat_Light_NoActionBar.Immersive">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
+    </style>
+
     <style name="ThemeK_AppCompat_Light_NoActionBar.FullScreen">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
@@ -27,6 +39,7 @@
         <!--        <item name="android:navigationBarColor">@color/cok_transparent</item>-->
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
     </style>
+
     <style name="ThemeK_AppCompat_Light_NoActionBar.Transparent">
         <!-- 设置状态栏背景色为透明 -->
         <!--        <item name="android:statusBarColor">@color/cok_transparent</item>-->
@@ -37,6 +50,7 @@
         <!-- 设置导航栏文字色为深色, true为深色, false为白色 -->
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
     </style>
+
     <style name="ThemeK_AppCompat_Light_NoActionBar.Translucent.Transparent">
         <item name="android:windowBackground">@color/cok_transparent</item>
     </style>

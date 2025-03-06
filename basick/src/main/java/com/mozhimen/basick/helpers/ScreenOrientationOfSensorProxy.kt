@@ -8,6 +8,7 @@ import com.mozhimen.basick.bases.BaseWakeBefDestroyLifecycleObserver
 import com.mozhimen.basick.utils.runOnMainThread
 import com.mozhimen.kotlin.elemk.android.hardware.cons.CSensorManager
 import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
+import com.mozhimen.kotlin.lintk.optins.OApiCall_BindViewLifecycle
 import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
 
 
@@ -18,6 +19,7 @@ import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
  * @Date 2024/1/30 16:54
  * @Version 1.0
  */
+@OApiCall_BindViewLifecycle
 @OApiInit_ByLazy
 @OApiCall_BindLifecycle
 class ScreenOrientationOfSensorProxy<A>(private val _activity: A) : BaseWakeBefDestroyLifecycleObserver() where A : Activity, A : LifecycleOwner {

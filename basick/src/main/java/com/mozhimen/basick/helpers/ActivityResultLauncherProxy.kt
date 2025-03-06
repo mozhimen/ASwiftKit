@@ -5,6 +5,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.mozhimen.basick.bases.BaseWakeBefDestroyLifecycleObserver
 import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
 import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
+import com.mozhimen.kotlin.lintk.optins.OApiCall_BindViewLifecycle
 
 /**
  * @ClassName ResultLauncherProxy
@@ -13,6 +14,7 @@ import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
  * @Date 2023/4/16 22:40
  * @Version 1.0
  */
+@OApiCall_BindViewLifecycle
 @OApiCall_BindLifecycle
 @OApiInit_ByLazy
 class ActivityResultLauncherProxy<T>() : BaseWakeBefDestroyLifecycleObserver() {
