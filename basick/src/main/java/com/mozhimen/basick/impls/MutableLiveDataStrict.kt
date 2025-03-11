@@ -17,13 +17,11 @@ class MutableLiveDataStrict<T> : MutableLiveData<T> {
 
     override fun postValue(value: T) {
         if (value == getValue()) return
-        if (value == null) return
         super.postValue(value)
     }
 
     override fun setValue(value: T) {
         if (value == getValue()) return
-        if (value == null) return
         super.setValue(value)
     }
 }
