@@ -9,6 +9,7 @@ import androidx.viewbinding.ViewBinding
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IFragment
 import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseFragment
+import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.kotlin.utilk.androidx.fragment.UtilKFragment
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
 
@@ -38,6 +39,7 @@ open class BaseFragmentVB<VB : ViewBinding> : BaseFragment(), IActivity, IFragme
             initData(savedInstanceState)
         } catch (e: Exception) {
             e.printStackTrace()
+            UtilKLogWrapper.e(TAG, "onViewCreated: e ${e.message}")
         }
     }
 
