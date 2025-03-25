@@ -3,7 +3,6 @@ package com.mozhimen.uik.databinding.bases.viewdatabinding.fragment
 import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
-import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.androidx.lifecycle.bases.BaseViewModel
 import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
 
@@ -18,7 +17,7 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
  * @Author mozhimen / Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseFragmentVDBVMVM<VB : ViewDataBinding, VM1 : BaseViewModel, VM2 : BaseViewModel> : com.mozhimen.uik.databinding.bases.viewdatabinding.fragment.BaseFragmentVDB<VB>, IActivity,
+abstract class BaseFragmentVDBVMVM<VB : ViewDataBinding, VM1 : BaseViewModel, VM2 : BaseViewModel> : BaseFragmentVDB<VB>,
     com.mozhimen.uik.databinding.commons.IViewDataBindingVM<VB> {
 
     protected var _factoryShare: ViewModelProvider.Factory?

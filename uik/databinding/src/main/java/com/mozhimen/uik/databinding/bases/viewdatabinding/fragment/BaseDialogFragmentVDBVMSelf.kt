@@ -2,7 +2,6 @@ package com.mozhimen.uik.databinding.bases.viewdatabinding.fragment
 
 import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
-import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.androidx.lifecycle.bases.BaseViewModel
 import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
 
@@ -13,7 +12,7 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseDialogFragmentVDBVMSelf<VB : ViewDataBinding, VM : BaseViewModel> : com.mozhimen.uik.databinding.bases.viewdatabinding.fragment.BaseDialogFragmentVDB<VB>, IActivity,
+abstract class BaseDialogFragmentVDBVMSelf<VB : ViewDataBinding, VM : BaseViewModel> : BaseDialogFragmentVDB<VB>,
     com.mozhimen.uik.databinding.commons.IViewDataBindingVM<VB> {
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)

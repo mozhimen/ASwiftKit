@@ -52,5 +52,6 @@ abstract class BaseSaveStateActivityVDB<VDB : ViewDataBinding> : BaseSaveStateAc
     override fun initData(savedInstanceState: Bundle?) {
         initView(savedInstanceState)
         initObserver()
+        initEvent()
     }
 }

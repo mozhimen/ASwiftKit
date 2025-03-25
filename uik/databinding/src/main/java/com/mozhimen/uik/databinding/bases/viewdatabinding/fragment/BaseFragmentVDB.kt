@@ -57,10 +57,6 @@ open class BaseFragmentVDB<VDB : ViewDataBinding> : BaseFragment(), IActivity, I
         UtilKLogWrapper.d(TAG, "onCreateView: ")
     }
 
-    override fun initFlag() {
-
-    }
-
     override fun initLayout() {
 
     }
@@ -69,13 +65,6 @@ open class BaseFragmentVDB<VDB : ViewDataBinding> : BaseFragment(), IActivity, I
     override fun initData(savedInstanceState: Bundle?) {
         initView(savedInstanceState)
         initObserver()
-    }
-
-    override fun initView(savedInstanceState: Bundle?) {
-
-    }
-
-    override fun initObserver() {
-
+        initEvent()
     }
 }

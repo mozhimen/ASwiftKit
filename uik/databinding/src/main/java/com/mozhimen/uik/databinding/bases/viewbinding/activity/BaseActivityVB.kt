@@ -38,5 +38,6 @@ abstract class BaseActivityVB<VB : ViewBinding> : BaseActivity(), IActivity {
     override fun initData(savedInstanceState: Bundle?) {
         initView(savedInstanceState)
         initObserver()
+        initEvent()
     }
 }

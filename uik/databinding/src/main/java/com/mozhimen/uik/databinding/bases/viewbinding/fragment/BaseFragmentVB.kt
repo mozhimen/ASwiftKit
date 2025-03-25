@@ -43,14 +43,6 @@ open class BaseFragmentVB<VB : ViewBinding> : BaseFragment(), IActivity, IFragme
         }
     }
 
-    override fun inflateView(viewGroup: ViewGroup?) {
-
-    }
-
-    override fun initFlag() {
-
-    }
-
     override fun initLayout() {
 
     }
@@ -59,13 +51,6 @@ open class BaseFragmentVB<VB : ViewBinding> : BaseFragment(), IActivity, IFragme
     override fun initData(savedInstanceState: Bundle?) {
         initView(savedInstanceState)
         initObserver()
-    }
-
-    override fun initView(savedInstanceState: Bundle?) {
-
-    }
-
-    override fun initObserver() {
-
+        initEvent()
     }
 }
