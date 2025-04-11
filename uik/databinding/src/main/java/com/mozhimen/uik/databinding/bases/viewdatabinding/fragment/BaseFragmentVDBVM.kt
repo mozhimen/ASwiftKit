@@ -16,8 +16,8 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
  * @Author mozhimen / Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseFragmentVDBVM<VB : ViewDataBinding, VM : BaseViewModel> : BaseFragmentVDB<VB>,
-    com.mozhimen.uik.databinding.commons.IViewDataBindingVM<VB> {
+abstract class BaseFragmentVDBVM<VDB : ViewDataBinding, VM : BaseViewModel> : BaseFragmentVDB<VDB>,
+    com.mozhimen.uik.databinding.commons.IViewDataBindingVM<VDB> {
 
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)

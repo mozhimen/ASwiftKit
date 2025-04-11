@@ -1,4 +1,4 @@
-package com.mozhimen.basick.helpers
+package com.mozhimen.basick.impls.proxys
 
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
