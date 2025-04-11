@@ -1,4 +1,4 @@
-package com.mozhimen.basick.helpers
+package com.mozhimen.basick.impls.proxys
 
 import android.app.Activity
 import androidx.lifecycle.LifecycleOwner

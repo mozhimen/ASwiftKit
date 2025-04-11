@@ -62,3 +62,4 @@ project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
 include ':AXmlKit:layoutk:magnet'
 include ':AXmlKit:basic'
 include ':uik:compose:test'
+include ':uik'
