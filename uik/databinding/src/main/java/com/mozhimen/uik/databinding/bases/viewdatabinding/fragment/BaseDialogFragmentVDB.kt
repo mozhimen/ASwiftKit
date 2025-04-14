@@ -10,7 +10,14 @@ import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IFragment
 import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseDialogFragment
 
-open class BaseDialogFragmentVDB<VDB : ViewDataBinding> : BaseDialogFragment(), IActivity, IFragment {
+open class BaseDialogFragmentVDB<VDB : ViewDataBinding> : BaseDialogFragment, IActivity, IFragment {
+    /**
+     * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
+     * @constructor
+     */
+    constructor() : super()
+
+    //////////////////////////////////////////////////////////////////////////////
 
     private var _vdb: VDB? = null
     protected val vdb get() = _vdb!!

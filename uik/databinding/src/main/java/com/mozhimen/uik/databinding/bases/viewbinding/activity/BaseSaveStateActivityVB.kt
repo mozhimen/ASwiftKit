@@ -3,17 +3,18 @@ package com.mozhimen.uik.databinding.bases.viewbinding.activity
 import android.os.Bundle
 import androidx.annotation.CallSuper
 import androidx.viewbinding.ViewBinding
-import com.mozhimen.basick.bases.BaseBarActivity
-import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
+import com.mozhimen.kotlin.elemk.androidx.appcompat.bases.BaseSaveStateActivity
+import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
 
 /**
- * @ClassName BaseBarActivityVB
+ * @ClassName BaseSaveStateActivityVB
  * @Description TODO
- * @Author Mozhimen / Kolin Zhao
+ * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseBarActivityVB<VB : ViewBinding> : BaseBarActivity {
+abstract class BaseSaveStateActivityVB<VB : ViewBinding> : BaseSaveStateActivity, IActivity {
+
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
      * @constructor
@@ -22,7 +23,7 @@ abstract class BaseBarActivityVB<VB : ViewBinding> : BaseBarActivity {
 
     ////////////////////////////////////////////////////////////////////////
 
-    protected val vdb: VB by lazy_ofNone {
+    protected val vb: VB by lazy_ofNone {
         com.mozhimen.uik.databinding.utils.ViewBindingUtil.get_ofClass<VB>(this::class.java, layoutInflater/*, 0*/)
     }
 
@@ -37,20 +38,20 @@ abstract class BaseBarActivityVB<VB : ViewBinding> : BaseBarActivity {
             initData(savedInstanceState)
         } catch (e: Exception) {
             e.printStackTrace()
-            UtilKLogWrapper.e(TAG, "onCreate: e ${e.message}")
         }
     }
 
     ///////////////////////////////////////////////////////////////
 
+    @CallSuper
     override fun initLayout() {
-        setContentView(vdb.root)
-        super.initLayout()
+        setContentView(vb.root)
     }
 
     @CallSuper
     override fun initData(savedInstanceState: Bundle?) {
         initView(savedInstanceState)
         initObserver()
+        initEvent()
     }
 }

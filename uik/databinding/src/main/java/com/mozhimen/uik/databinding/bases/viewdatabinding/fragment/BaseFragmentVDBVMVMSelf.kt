@@ -5,6 +5,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import com.mozhimen.kotlin.elemk.androidx.lifecycle.bases.BaseViewModel
 import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
+import com.mozhimen.uik.databinding.commons.IViewDataBindingVM
 
 /**
  * @ClassName BaseFragmentVBVM
@@ -17,11 +18,7 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
  * @Author mozhimen / Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseFragmentVDBVMVM<VB : ViewDataBinding, VM1 : BaseViewModel, VM2 : BaseViewModel> : BaseFragmentVDB<VB>,
-    com.mozhimen.uik.databinding.commons.IViewDataBindingVM<VB> {
-
-    protected var _factoryShare: ViewModelProvider.Factory?
-    protected var _factorySelf: ViewModelProvider.Factory?
+abstract class BaseFragmentVDBVMVMSelf<VDB : ViewDataBinding, VMSHARE : BaseViewModel, VMSELF : BaseViewModel> : BaseFragmentVDB<VDB>, IViewDataBindingVM<VDB> {
 
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
@@ -38,8 +35,10 @@ abstract class BaseFragmentVDBVMVM<VB : ViewDataBinding, VM1 : BaseViewModel, VM
 
     //////////////////////////////////////////////////////////////////////////////
 
-    protected lateinit var vmShare: VM1
-    protected lateinit var vmSelf: VM2
+    protected var _factoryShare: ViewModelProvider.Factory?
+    protected var _factorySelf: ViewModelProvider.Factory?
+    protected lateinit var vmShare: VMSHARE
+    protected lateinit var vmSelf: VMSELF
 
     //////////////////////////////////////////////////////////////////////////////
 
@@ -47,7 +46,7 @@ abstract class BaseFragmentVDBVMVM<VB : ViewDataBinding, VM1 : BaseViewModel, VM
     override fun initLayout() {
         super.initLayout()
         vmShare = UtilKViewModel.get(this.requireActivity(), _factoryShare/*, 1*/)
-        vmSelf = UtilKViewModel.get(this.requireActivity(), _factorySelf/*, 1*/)
+        vmSelf = UtilKViewModel.get(this, _factorySelf/*, 1*/)
         bindViewVM(vdb)
     }
 }

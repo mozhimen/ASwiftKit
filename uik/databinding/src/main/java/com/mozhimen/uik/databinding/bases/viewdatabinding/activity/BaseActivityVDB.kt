@@ -8,7 +8,14 @@ import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
 import com.mozhimen.uik.databinding.utils.ViewDataBindingUtil
 
-abstract class BaseActivityVDB<VDB : ViewDataBinding> : BaseActivity(), IActivity {
+abstract class BaseActivityVDB<VDB : ViewDataBinding> : BaseActivity, IActivity {
+    /**
+     * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
+     * @constructor
+     */
+    constructor() : super()
+
+    //////////////////////////////////////////////////////////////////////////////
 
     protected val vdb: VDB by lazy_ofNone {
         ViewDataBindingUtil.get_ofClass<VDB>(this::class.java, layoutInflater/*, 0*/).apply {

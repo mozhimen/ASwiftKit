@@ -13,7 +13,15 @@ import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseSaveStateActivityVDB<VDB : ViewDataBinding> : BaseSaveStateActivity(), IActivity {
+abstract class BaseSaveStateActivityVDB<VDB : ViewDataBinding> : BaseSaveStateActivity, IActivity {
+
+    /**
+     * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
+     * @constructor
+     */
+    constructor() : super()
+
+    //////////////////////////////////////////////////////////////////////////////
 
     protected val vdb: VDB by lazy_ofNone {
         com.mozhimen.uik.databinding.utils.ViewDataBindingUtil.get_ofClass<VDB>(this::class.java, layoutInflater/*, 0*/).apply {

@@ -4,6 +4,7 @@ import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
+import com.mozhimen.uik.databinding.commons.IViewDataBindingVM
 
 /**
  * @ClassName BaseSaveStateActivityVBVM
@@ -11,8 +12,7 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseSaveStateActivityVDBVM<VB : ViewDataBinding, VM : ViewModel> : com.mozhimen.uik.databinding.bases.viewdatabinding.activity.BaseSaveStateActivityVDB<VB>,
-    com.mozhimen.uik.databinding.commons.IViewDataBindingVM<VB> {
+abstract class BaseSaveStateActivityVDBVM<VDB : ViewDataBinding, VM : ViewModel> : BaseSaveStateActivityVDB<VDB>, IViewDataBindingVM<VDB> {
 
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)

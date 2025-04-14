@@ -1,42 +1,38 @@
-package com.mozhimen.uik.databinding.bases.viewdatabinding.fragment
+package com.mozhimen.uik.databinding.bases.viewbinding.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
-import androidx.databinding.ViewDataBinding
+import androidx.viewbinding.ViewBinding
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IFragment
-import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseFragment
-import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
-import com.mozhimen.kotlin.utilk.androidx.fragment.UtilKFragment
+import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseDialogFragment
 
-open class BaseFragmentVDB<VDB : ViewDataBinding> : BaseFragment, IActivity, IFragment {
+open class BaseDialogFragmentVB<VB : ViewBinding> : BaseDialogFragment, IActivity, IFragment {
+
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
      * @constructor
      */
     constructor() : super()
 
-    //////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
 
-    private var _vdb: VDB? = null
-    protected val vdb get() = _vdb!!
-
-    //////////////////////////////////////////////////////////////////////////////
-
-    fun isAlive(): Boolean = UtilKFragment.isAlive(this)
+    private var _vb: VB? = null
+    protected val vb get() = _vb!!
 
     //////////////////////////////////////////////////////////////////////////////
 
-    //@warn 如果子类可以继承, 这里子类的VB一定要放置在第一个
+    fun isAlive(): Boolean = !isRemoving && !isDetached && activity != null
+
+    //////////////////////////////////////////////////////////////////////////////
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         inflateView(container)
-        _vdb = com.mozhimen.uik.databinding.utils.ViewDataBindingUtil.get_ofClass<VDB>(this::class.java, inflater, container/*, 0*/).apply {
-            lifecycleOwner = viewLifecycleOwner
-        }
-        return vdb.root
+        _vb = com.mozhimen.uik.databinding.utils.ViewBindingUtil.get_ofClass<VB>(this::class.java, inflater, container/*, 0*/)
+        return vb.root
     }
 
     /**
@@ -44,8 +40,7 @@ open class BaseFragmentVDB<VDB : ViewDataBinding> : BaseFragment, IActivity, IFr
      */
     @CallSuper
     override fun onDestroyView() {
-        vdb.unbind()
-        _vdb = null
+        _vb = null
         super.onDestroyView()
     }
 
@@ -58,10 +53,6 @@ open class BaseFragmentVDB<VDB : ViewDataBinding> : BaseFragment, IActivity, IFr
         } catch (e: Exception) {
             e.printStackTrace()
         }
-    }
-
-    override fun inflateView(viewGroup: ViewGroup?) {
-        UtilKLogWrapper.d(TAG, "onCreateView: ")
     }
 
     override fun initLayout() {

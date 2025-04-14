@@ -13,7 +13,14 @@ import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.kotlin.utilk.androidx.fragment.UtilKFragment
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
 
-open class BaseFragmentVB<VB : ViewBinding> : BaseFragment(), IActivity, IFragment {
+open class BaseFragmentVB<VB : ViewBinding> : BaseFragment, IActivity, IFragment {
+    /**
+     * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
+     * @constructor
+     */
+    constructor() : super()
+
+    //////////////////////////////////////////////////////////////////////////////
 
     protected val vb: VB by lazy_ofNone {
         com.mozhimen.uik.databinding.utils.ViewBindingUtil.get_ofClass(this::class.java, layoutInflater/*, 0*/)

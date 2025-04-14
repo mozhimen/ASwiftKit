@@ -14,7 +14,15 @@ import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
  * @Author Mozhimen / Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseBarActivityVDB<VDB : ViewDataBinding> : BaseBarActivity() {
+abstract class BaseBarActivityVDB<VDB : ViewDataBinding> : BaseBarActivity {
+    /**
+     * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
+     * @constructor
+     */
+    constructor() : super()
+
+    //////////////////////////////////////////////////////////////////////////////
+
     protected val vdb: VDB by lazy_ofNone {
         ViewDataBindingUtil.get_ofClass<VDB>(this::class.java, layoutInflater/*, 0*/).apply {
             lifecycleOwner = this@BaseBarActivityVDB

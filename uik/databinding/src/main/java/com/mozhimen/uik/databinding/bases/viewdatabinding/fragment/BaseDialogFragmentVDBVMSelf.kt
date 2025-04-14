@@ -4,6 +4,7 @@ import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
 import com.mozhimen.kotlin.elemk.androidx.lifecycle.bases.BaseViewModel
 import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
+import com.mozhimen.uik.databinding.commons.IViewDataBindingVM
 
 
 /**
@@ -12,8 +13,7 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseDialogFragmentVDBVMSelf<VB : ViewDataBinding, VM : BaseViewModel> : BaseDialogFragmentVDB<VB>,
-    com.mozhimen.uik.databinding.commons.IViewDataBindingVM<VB> {
+abstract class BaseDialogFragmentVDBVMSelf<VDB : ViewDataBinding, VM : BaseViewModel> : BaseDialogFragmentVDB<VDB>, IViewDataBindingVM<VDB> {
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
      * @constructor

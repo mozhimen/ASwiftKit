@@ -12,8 +12,7 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
  * @Author Mozhimen / Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseBarActivityVDBVM<VDB : ViewDataBinding, VM : ViewModel> : BaseBarActivityVDB<VDB>,
-    IViewDataBindingVM<VDB> {
+abstract class BaseBarActivityVDBVM<VDB : ViewDataBinding, VM : ViewModel> : BaseBarActivityVDB<VDB>, IViewDataBindingVM<VDB> {
 
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)

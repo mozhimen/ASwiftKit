@@ -1,9 +1,11 @@
-package com.mozhimen.uik.databinding.bases.viewdatabinding.fragment
+package com.mozhimen.uik.databinding.bases.viewbinding.fragment
 
 import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
+import androidx.viewbinding.ViewBinding
 import com.mozhimen.kotlin.elemk.androidx.lifecycle.bases.BaseViewModel
 import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
+import com.mozhimen.uik.databinding.commons.IViewBindingVM
 import com.mozhimen.uik.databinding.commons.IViewDataBindingVM
 
 /**
@@ -18,8 +20,8 @@ import com.mozhimen.uik.databinding.commons.IViewDataBindingVM
  * @Date 2022/2/27 13:02
  * @Version 1.0
  */
-abstract class BaseFragmentVDBVMSelf<VDB : ViewDataBinding, VM : BaseViewModel> : BaseFragmentVDB<VDB>,
-    IViewDataBindingVM<VDB> {
+abstract class BaseFragmentVBVMSelf<VB : ViewBinding, VM : BaseViewModel> : BaseFragmentVB<VB>,
+    IViewBindingVM<VB> {
 
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
@@ -37,6 +39,5 @@ abstract class BaseFragmentVDBVMSelf<VDB : ViewDataBinding, VM : BaseViewModel> 
     override fun initLayout() {
         super.initLayout()
         vm = UtilKViewModel.get(this, getViewModelProviderFactory()/*, 1*/)
-        bindViewVM(vdb)
     }
 }

@@ -1,19 +1,19 @@
-package com.mozhimen.uik.databinding.bases.viewdatabinding.fragment
+package com.mozhimen.uik.databinding.bases.viewbinding.activity
 
 import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
-import com.mozhimen.kotlin.elemk.androidx.lifecycle.bases.BaseViewModel
+import androidx.lifecycle.ViewModel
+import androidx.viewbinding.ViewBinding
 import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
-import com.mozhimen.uik.databinding.commons.IViewDataBindingVM
-
+import com.mozhimen.uik.databinding.commons.IViewBindingVM
 
 /**
- * @ClassName BaseDialogFragmentVBVM
- * @Description 这里的VM是和Activity共享的VM,私有可以通过代理的方式引入
+ * @ClassName BaseSaveStateActivityVBVM
+ * @Description TODO
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-abstract class BaseDialogFragmentVDBVM<VDB : ViewDataBinding, VM : BaseViewModel> : BaseDialogFragmentVDB<VDB>, IViewDataBindingVM<VDB> {
+abstract class BaseSaveStateActivityVBVM<VB : ViewBinding, VM : ViewModel> : BaseSaveStateActivityVB<VB>, IViewBindingVM<VB> {
 
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
@@ -30,7 +30,6 @@ abstract class BaseDialogFragmentVDBVM<VDB : ViewDataBinding, VM : BaseViewModel
     @CallSuper
     override fun initLayout() {
         super.initLayout()
-        vm = UtilKViewModel.get(this.requireActivity(), getViewModelProviderFactory()/*, 1*/)
-        bindViewVM(vdb)
+        vm = UtilKViewModel.get(this, getViewModelProviderFactory()/*, 1*/)
     }
 }
