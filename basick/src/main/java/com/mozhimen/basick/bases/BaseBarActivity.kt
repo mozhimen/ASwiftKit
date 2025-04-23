@@ -38,7 +38,7 @@ abstract class BaseBarActivity : BaseSaveStateActivity, IActivity, IToolbarProxy
 
     @CallSuper
     override fun initLayout() {
-        UtilKActionBar.get_ofSupport(this)?.let {
+        UtilKActionBar.get_support(this)?.let {
             toolBarProxy.initToolbar(this, it)
         }
     }

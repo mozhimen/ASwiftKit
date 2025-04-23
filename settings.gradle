@@ -47,6 +47,8 @@ project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKi
 include ':ALibKit_Jetpack:databinding'
 include ':ALibKit_Jetpack:annotation'
 include ':ALibKit_Jetpack:core'
+include ':ALibKit_Jetpack:lifecycle_viewmodel_compose'
+include ':ALibKit_Jetpack:lifecycle_runtime_compose'
 //KUtilKit
 include ":KUtilKit"
 project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")

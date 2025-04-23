@@ -26,6 +26,47 @@
         <item name="android:textSize">13sp</item>
     </style>-->
 
+    <style name="StyleK_TabLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">fixed</item>
+    </style>
+
+    <style name="StyleK_TabLayout.Base">
+        <!--        <item name="android:layout_height">@dimen/height_40</item>-->
+        <item name="tabMaxWidth">0dp</item>
+        <!--        <item name="tabIndicator">@drawable/ic_line_blue0177fd_size44</item>-->
+        <!--        <item name="tabIndicatorColor">@color/le_blue_0177fd</item>-->
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabIndicatorAnimationMode">elastic</item>
+        <!--        <item name="tabSelectedTextColor">@color/le_blue_0177fd</item>-->
+        <item name="tabTextAppearance">@style/StyleK_TabLayout_TextAppearance</item>
+        <!--        <item name="tabTextColor">@color/le_blac_ff000000</item>-->
+        <item name="tabRippleColor">@null</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="StyleK_TabLayout.Rounded">
+        <!--        <item name="android:layout_height">38dp</item>-->
+        <!--        <item name="tabIndicator">@drawable/ic_line_white_size38</item>-->
+        <!--        <item name="tabIndicatorColor">@color/le_whit_ffffffff</item>-->
+        <item name="tabIndicatorFullWidth">true</item>
+        <item name="tabIndicatorHeight">38dp</item>
+        <item name="tabPaddingStart">2dp</item>
+        <item name="tabPaddingEnd">2dp</item>
+        <!--        <item name="tabBackground">@color/le_tran</item>-->
+        <!--        <item name="tabSelectedTextColor">@color/le_blac_ff000000</item>-->
+        <item name="tabTextAppearance">@style/StyleK_TabLayout_TextAppearance</item>
+        <!--        <item name="tabTextColor">@color/le_gray_5c5c5c</item>-->
+        <item name="tabRippleColor">@null</item>
+        <!--        <item name="android:background">@drawable/bg_rect_radius24_grayf7f7f9</item>-->
+    </style>
+
+    <style name="StyleK_TabLayout_TextAppearance">
+        <item name="android:textSize">13sp</item>
+    </style>
+
     <!--TabLayout字体大小-->
     <style name="StyleK_TabLayout_TextStyle">
         <item name="android:textSize">13sp</item>

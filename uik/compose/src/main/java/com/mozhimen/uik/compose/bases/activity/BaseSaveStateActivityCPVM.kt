@@ -6,13 +6,13 @@ import com.mozhimen.kotlin.utilk.androidx.lifecycle.UtilKViewModel
 import com.mozhimen.uik.compose.commons.IComposeVM
 
 /**
- * @ClassName BaseBarActivityVPVM
+ * @ClassName BaseSaveStateActivityCPVM
  * @Description TODO
- * @Author Mozhimen / Kolin Zhao
- * @Date 2025/2/2 16:48
+ * @Author mozhimen
+ * @Date 2025/4/17
  * @Version 1.0
  */
-abstract class BaseBarActivityVPVM<VM : ViewModel> : BaseBarActivityCP,
+abstract class BaseSaveStateActivityCPVM<VM : ViewModel> : BaseSaveStateActivityCP,
     IComposeVM {
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)

@@ -5,18 +5,18 @@ import androidx.activity.compose.setContent
 import androidx.annotation.CallSuper
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionContext
-import com.mozhimen.kotlin.elemk.androidx.appcompat.bases.BaseActivity
+import com.mozhimen.kotlin.elemk.androidx.appcompat.bases.BaseSaveStateActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.commons.I_Listener
 
 /**
- * @ClassName BaseActivityCP
+ * @ClassName BaseSaveStateActivityCP
  * @Description TODO
- * @Author Mozhimen / Kolin Zhao
- * @Date 2025/2/2 16:51
+ * @Author mozhimen
+ * @Date 2025/4/17
  * @Version 1.0
  */
-abstract class BaseActivityCP : BaseActivity, IActivity {
+abstract class BaseSaveStateActivityCP : BaseSaveStateActivity, IActivity {
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
      * @constructor
@@ -36,6 +36,8 @@ abstract class BaseActivityCP : BaseActivity, IActivity {
             e.printStackTrace()
         }
     }
+
+    ///////////////////////////////////////////////////////////////
 
     override fun initLayout() {
         setContent(getCompositionContext(), getContent())

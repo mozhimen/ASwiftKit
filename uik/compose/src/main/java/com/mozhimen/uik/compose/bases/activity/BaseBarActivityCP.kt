@@ -16,7 +16,14 @@ import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
  * @Date 2025/2/2 15:44
  * @Version 1.0
  */
-abstract class BaseBarActivityCP : BaseBarActivity() {
+abstract class BaseBarActivityCP : BaseBarActivity {
+    /**
+     * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
+     * @constructor
+     */
+    constructor() : super()
+
+    //////////////////////////////////////////////////////////////////////////////
 
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +47,7 @@ abstract class BaseBarActivityCP : BaseBarActivity() {
     override fun initData(savedInstanceState: Bundle?) {
         initView(savedInstanceState)
         initObserver()
+        initEvent()
     }
 
     ///////////////////////////////////////////////////////////////

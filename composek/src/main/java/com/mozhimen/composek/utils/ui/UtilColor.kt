@@ -1,16 +1,8 @@
 package com.mozhimen.composek.utils.ui
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.painter.ColorPainter
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 /**
@@ -21,26 +13,26 @@ import kotlin.random.Random
  * @Version 1.0
  */
 fun Long.longColor2color(): Color =
-    UtilKColor.longColor2color(this)
+    UtilColor.longColor2color(this)
 
 fun Int.intColor2color(): Color =
-    UtilKColor.intColor2color(this)
+    UtilColor.intColor2color(this)
 
 fun Long.longColor2colorPainter(): ColorPainter =
-    UtilKColor.longColor2colorPainter(this)
+    UtilColor.longColor2colorPainter(this)
 
 fun Int.intColor2colorPainter(): ColorPainter =
-    UtilKColor.intColor2colorPainter(this)
+    UtilColor.intColor2colorPainter(this)
 
 fun Long.longColor2solidColor(): SolidColor =
-    UtilKColor.longColor2solidColor(this)
+    UtilColor.longColor2solidColor(this)
 
 fun Int.intColor2solidColor(): SolidColor =
-    UtilKColor.intColor2solidColor(this)
+    UtilColor.intColor2solidColor(this)
 
 ////////////////////////////////////////////////////////////////
 
-object UtilKColor {
+object UtilColor {
     @JvmStatic
     fun getRandomColor():Color =
         Color(

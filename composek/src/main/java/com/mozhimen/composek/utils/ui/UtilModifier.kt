@@ -3,6 +3,7 @@ package com.mozhimen.composek.utils.ui
 import android.annotation.SuppressLint
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -13,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.unit.dp
 import com.mozhimen.kotlin.elemk.commons.I_Listener
-import com.mozhimen.kotlin.utilk.BuildConfig
 import kotlinx.coroutines.delay
 
 /**
@@ -24,12 +24,27 @@ import kotlinx.coroutines.delay
  * @Version 1.0
  */
 fun Modifier.debouncedClickable(delay: Long = 500, onClick: I_Listener): Modifier =
-    UtilKModifier.debouncedClickable(this, delay, onClick)
+    UtilModifier.debouncedClickable(this, delay, onClick)
 
 fun Modifier.borderDebug(): Modifier =
-    UtilKModifier.borderDebug(this)
+    UtilModifier.borderDebug(this)
 
-object UtilKModifier {
+@Composable
+fun Modifier.cancelRipperClick(onClick: I_Listener): Modifier =
+    UtilModifier.cancelRipperClick(this, onClick)
+
+//////////////////////////////////////////////////////////////////////////////
+
+object UtilModifier {
+    @Composable
+    @SuppressLint("ModifierFactoryExtensionFunction")
+    fun cancelRipperClick(modifier: Modifier, onClick: I_Listener) =
+        modifier.clickable(
+            interactionSource = remember { MutableInteractionSource() },
+            indication = null,
+            onClick = onClick
+        )
+
     @JvmStatic
     @SuppressLint("ModifierFactoryUnreferencedReceiver", "ModifierFactoryExtensionFunction")
     fun debouncedClickable(modifier: Modifier, delay: Long = 500, onClick: I_Listener): Modifier =
@@ -52,5 +67,5 @@ object UtilKModifier {
 
     @JvmStatic
     fun borderDebug(modifier: Modifier): Modifier =
-        modifier.border(3.dp, UtilKColor.getRandomColor())
+        modifier.border(3.dp, UtilColor.getRandomColor())
 }
