@@ -6,6 +6,7 @@ import androidx.annotation.CallSuper
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionContext
 import com.mozhimen.basick.bases.BaseBarActivity
+import com.mozhimen.composek.elems.commons.ICompose_Listener
 import com.mozhimen.kotlin.elemk.commons.I_Listener
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 
@@ -52,7 +53,7 @@ abstract class BaseBarActivityCP : BaseBarActivity {
 
     ///////////////////////////////////////////////////////////////
 
-    abstract fun getContent(): @Composable I_Listener
+    abstract fun getContent(): ICompose_Listener
 
     ///////////////////////////////////////////////////////////////
 

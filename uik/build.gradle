@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.uik'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 19
@@ -31,6 +31,7 @@ android {
 }
 
 dependencies {
+    implementation project(':KUtilKit:android')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'

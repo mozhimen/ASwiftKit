@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.uik.databinding'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 19

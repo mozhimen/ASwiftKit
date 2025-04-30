@@ -26,10 +26,6 @@ open class BaseFragmentVDB<VDB : ViewDataBinding> : BaseFragment, IActivity, IFr
 
     //////////////////////////////////////////////////////////////////////////////
 
-    fun isAlive(): Boolean = UtilKFragment.isAlive(this)
-
-    //////////////////////////////////////////////////////////////////////////////
-
     //@warn 如果子类可以继承, 这里子类的VB一定要放置在第一个
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         inflateView(container)

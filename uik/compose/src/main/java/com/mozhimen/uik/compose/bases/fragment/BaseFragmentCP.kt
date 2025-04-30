@@ -1,43 +1,39 @@
-package com.mozhimen.uik.databinding.bases.viewbinding.fragment
+package com.mozhimen.uik.compose.bases.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
-import androidx.viewbinding.ViewBinding
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.ViewCompositionStrategy
+import com.mozhimen.composek.elems.commons.ICompose_Listener
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IFragment
-import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseDialogFragment
+import com.mozhimen.kotlin.elemk.androidx.fragment.bases.BaseFragment
 
-open class BaseDialogFragmentVB<VB : ViewBinding> : BaseDialogFragment, IActivity, IFragment {
-
+/**
+ * @ClassName BaseFragmentCP
+ * @Description TODO
+ * @Author mozhimen
+ * @Date 2025/4/25
+ * @Version 1.0
+ */
+abstract class BaseFragmentCP : BaseFragment, IActivity, IFragment {
     /**
      * 针对Hilt(@JvmOverloads kotlin默认参数值无效)
      * @constructor
      */
     constructor() : super()
 
-    ////////////////////////////////////////////////////////////////////////
-
-    private var _vb: VB? = null
-    protected val vb get() = _vb!!
-
     //////////////////////////////////////////////////////////////////////////////
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         inflateView(container)
-        _vb = com.mozhimen.uik.databinding.utils.ViewBindingUtil.get_ofClass<VB>(this::class.java, inflater, container/*, 0*/)
-        return vb.root
-    }
-
-    /**
-     * 及时释放vb避免内存泄漏
-     */
-    @CallSuper
-    override fun onDestroyView() {
-        _vb = null
-        super.onDestroyView()
+        return ComposeView(requireContext()).apply {
+            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+            setContent(getContent())
+        }
     }
 
     @CallSuper
@@ -61,4 +57,8 @@ open class BaseDialogFragmentVB<VB : ViewBinding> : BaseDialogFragment, IActivit
         initObserver()
         initEvent()
     }
+
+    ///////////////////////////////////////////////////////////////
+
+    abstract fun getContent(): ICompose_Listener
 }

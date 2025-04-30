@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.composek.test'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.mozhimen.composek.test"
@@ -37,7 +37,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.10'
+        kotlinCompilerExtensionVersion '1.5.15'
     }
     packaging {
         resources {

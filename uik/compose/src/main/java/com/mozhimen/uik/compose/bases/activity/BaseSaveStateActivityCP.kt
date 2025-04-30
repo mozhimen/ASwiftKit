@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.annotation.CallSuper
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionContext
+import com.mozhimen.composek.elems.commons.ICompose_Listener
 import com.mozhimen.kotlin.elemk.androidx.appcompat.bases.BaseSaveStateActivity
 import com.mozhimen.kotlin.elemk.androidx.appcompat.commons.IActivity
 import com.mozhimen.kotlin.elemk.commons.I_Listener
@@ -52,7 +53,7 @@ abstract class BaseSaveStateActivityCP : BaseSaveStateActivity, IActivity {
 
     ///////////////////////////////////////////////////////////////
 
-    abstract fun getContent(): @Composable I_Listener
+    abstract fun getContent(): ICompose_Listener
 
     ///////////////////////////////////////////////////////////////
 

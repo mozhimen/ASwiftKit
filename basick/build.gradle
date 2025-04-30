@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = 'com.mozhimen.basick'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 19
@@ -68,7 +68,7 @@ dependencies {
 
     //jetbrains
     //stdlib
-    api project(':ALibKit_Jetbrains:kotlin_stdlib')//"org.jetbrains.kotlin:kotlin-stdlib:1.9.22"
+    api project(':ALibKit_Jetbrains:kotlin_stdlib')//"org.jetbrains.kotlin:kotlin-stdlib:1.9.25"
 
     //coroutine
     api project(':ALibKit_Jetbrains:kotlinx_coroutines')

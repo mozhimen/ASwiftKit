@@ -24,10 +24,6 @@ open class BaseDialogFragmentVDB<VDB : ViewDataBinding> : BaseDialogFragment, IA
 
     //////////////////////////////////////////////////////////////////////////////
 
-    fun isAlive(): Boolean = !isRemoving && !isDetached && activity != null
-
-    //////////////////////////////////////////////////////////////////////////////
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         inflateView(container)
         _vdb = com.mozhimen.uik.databinding.utils.ViewDataBindingUtil.get_ofClass<VDB>(this::class.java, inflater, container/*, 0*/).apply {
