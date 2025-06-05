@@ -197,3 +197,4 @@
     <fields>;
     <methods>;
 }
+#-keep class com.xx.xxx.fun_data.mos.** { *; }
