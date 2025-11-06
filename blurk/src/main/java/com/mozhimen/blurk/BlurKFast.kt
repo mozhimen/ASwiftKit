@@ -53,7 +53,8 @@ object BlurKFast : IUtilK {
         val bitmap: Bitmap = if (canReuseInBitmap) {
             sourceBitmap
         } else {
-            sourceBitmap.copy(sourceBitmap.config, true)
+            val safeConfig = sourceBitmap.config ?: Bitmap.Config.ARGB_8888
+            sourceBitmap.copy(safeConfig, true)
         }
 
         val w = bitmap.width

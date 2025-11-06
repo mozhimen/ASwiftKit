@@ -21,7 +21,7 @@ import androidx.lifecycle.setViewTreeLifecycleOwner
 import androidx.savedstate.findViewTreeSavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.mozhimen.composek.test.ui.theme.SwiftKitTheme
-import com.mozhimen.kotlin.elemk.androidx.lifecycle.SavedStateRegistryOwnerProxy
+import com.mozhimen.kotlin.elemk.androidx.lifecycle.impls.SavedStateRegistryOwnerProxy
 import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
 import com.mozhimen.kotlin.utilk.android.app.getContentView
 import com.mozhimen.kotlin.utilk.android.widget.showToast
@@ -63,7 +63,7 @@ class MainActivity : Activity(), IUtilK {
     @OptIn(OApiInit_ByLazy::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _savedStateRegistryOwnerProxy.onCreate(NAME)
+        _savedStateRegistryOwnerProxy.onCreate()
         if (this.window.decorView.findViewTreeLifecycleOwner() == null) {
             this.window.decorView.setViewTreeLifecycleOwner(_savedStateRegistryOwnerProxy)
         }
@@ -76,13 +76,13 @@ class MainActivity : Activity(), IUtilK {
     @OptIn(OApiInit_ByLazy::class)
     override fun onStart() {
         super.onStart()
-        _savedStateRegistryOwnerProxy.onStart(NAME)
+        _savedStateRegistryOwnerProxy.onStart()
         this.getContentView<ViewGroup>().addView(_composeView)
     }
 
     @OptIn(OApiInit_ByLazy::class)
     override fun onStop() {
-        _savedStateRegistryOwnerProxy.onStop(NAME)
+        _savedStateRegistryOwnerProxy.onStop()
         this.getContentView<ViewGroup>().removeAllViews()
         super.onStop()
     }
