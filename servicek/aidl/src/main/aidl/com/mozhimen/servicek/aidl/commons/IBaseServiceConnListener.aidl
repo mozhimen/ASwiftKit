@@ -1,8 +1,8 @@
 // IBaseServiceConnListener.aidl
-package com.mozhimen.servicek.commons;
+package com.mozhimen.servicek.aidl.commons;
 
 // Declare any non-default types here with import statements
-import com.mozhimen.servicek.commons.IBaseServiceResListener;
+import com.mozhimen.servicek.aidl.commons.IBaseServiceResListener;
 
 interface IBaseServiceConnListener {
     /**

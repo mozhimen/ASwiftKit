@@ -31,16 +31,19 @@ android {
 }
 
 dependencies {
-    if (rootProject.name=="ASwiftKit"){
-        api project(/*project.path.replace(project.name,'')+*/":basick")
-        api project(/*project.path.replace(project.name,'')+*/":xmlk")
-    }else{
-        api project(/*project.path.replace(project.name,'')+*/":ASwiftKit:basick")
-        api project(/*project.path.replace(project.name,'')+*/":ASwiftKit:xmlk")
+    if (rootProject.name == "ASwiftKit") {
+        api project(/*project.path.replace(project.name,'')+*/ ":basick")
+        api project(/*project.path.replace(project.name,'')+*/ ":xmlk")
+    } else {
+        api project(/*project.path.replace(project.name,'')+*/ ":ASwiftKit:basick")
+        api project(/*project.path.replace(project.name,'')+*/ ":ASwiftKit:xmlk")
     }
     //databinding
-    api project(":ALibKit_Jetpack:databinding")
-
+    if (rootProject.name == "ALibKit_Jetpack") {
+        api project(":databinding")
+    }else{
+        api project(":ALibKit_Jetpack:databinding")
+    }
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

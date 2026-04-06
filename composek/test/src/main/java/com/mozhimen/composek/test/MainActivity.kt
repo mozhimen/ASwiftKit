@@ -22,7 +22,7 @@ import androidx.savedstate.findViewTreeSavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.mozhimen.composek.test.ui.theme.SwiftKitTheme
 import com.mozhimen.kotlin.elemk.androidx.lifecycle.impls.SavedStateRegistryOwnerProxy
-import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
+import com.mozhimen.kotlin.lintk.optins.api.OApiInit_ByLazy
 import com.mozhimen.kotlin.utilk.android.app.getContentView
 import com.mozhimen.kotlin.utilk.android.widget.showToast
 import com.mozhimen.kotlin.utilk.commons.IUtilK

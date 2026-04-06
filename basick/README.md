@@ -9,7 +9,7 @@
 
 例如: UtilKContext的包名为
 ```
-package com.mozhimen.basick.utilk.android.content
+package com.mozhimen.kotlin.utilk.android.content
 ```
 
 2. 关于类名
@@ -40,7 +40,7 @@ package com.mozhimen.basick.utilk.android.content
 
 例如: UtilKContext
 ```
-package com.mozhimen.basick.utilk.android.content
+package com.mozhimen.kotlin.utilk.android.content
 
 object UtilKContext : BaseUtilK() {
 

@@ -1,5 +1,5 @@
 // IBaseServiceResListener.aidl
-package com.mozhimen.servicek.commons;
+package com.mozhimen.servicek.aidl.commons;
 
 // Declare any non-default types here with import statements
 

@@ -1,6 +1,6 @@
-package com.mozhimen.servicek.bases
+package com.mozhimen.servicek.aidl.bases
 
-import com.mozhimen.servicek.commons.IBaseServiceResListener
+import com.mozhimen.servicek.aidl.commons.IBaseServiceResListener
 
 /**
  * @ClassName BaseServiceResCallback

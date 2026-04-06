@@ -1,4 +1,4 @@
-package com.mozhimen.servicek
+package com.mozhimen.servicek.aidl
 
 import android.content.ComponentName
 import android.content.Intent
@@ -8,14 +8,14 @@ import android.os.RemoteException
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LifecycleOwner
-import com.mozhimen.servicek.commons.IBaseServiceConnListener
-import com.mozhimen.servicek.commons.IBaseServiceResListener
 import com.mozhimen.basick.bases.BaseWakeBefDestroyLifecycleObserver
-import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
-import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
-import com.mozhimen.servicek.commons.IServiceKProxy
-import com.mozhimen.kotlin.utilk.android.util.e
 import com.mozhimen.basick.utils.runOnMainThread
+import com.mozhimen.kotlin.lintk.optins.api.OApiCall_BindLifecycle
+import com.mozhimen.kotlin.lintk.optins.api.OApiInit_ByLazy
+import com.mozhimen.kotlin.utilk.android.util.e
+import com.mozhimen.servicek.aidl.commons.IBaseServiceConnListener
+import com.mozhimen.servicek.aidl.commons.IBaseServiceResListener
+import com.mozhimen.servicek.aidl.commons.IServiceKProxy
 
 /**
  * @ClassName ServiceKProxy
@@ -37,7 +37,7 @@ open class ServiceKProxy<A>(
     private var _isBindService = false
 
     init {
-        _activity.runOnMainThread{
+        _activity.runOnMainThread {
             bindService()
         }
     }

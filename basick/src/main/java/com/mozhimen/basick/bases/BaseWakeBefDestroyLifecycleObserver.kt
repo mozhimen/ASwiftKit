@@ -3,11 +3,12 @@ package com.mozhimen.basick.bases
 import androidx.annotation.CallSuper
 import androidx.lifecycle.LifecycleOwner
 import com.mozhimen.basick.utils.runOnMainThread
-import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
+import com.mozhimen.kotlin.lintk.optins.api.OApiInit_ByLazy
 import com.mozhimen.kotlin.elemk.androidx.lifecycle.commons.IDefaultLifecycleObserver
-import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
-import com.mozhimen.kotlin.lintk.optins.OApiCall_BindViewLifecycle
+import com.mozhimen.kotlin.lintk.optins.api.OApiCall_BindLifecycle
+import com.mozhimen.kotlin.lintk.optins.api.OApiCall_BindViewLifecycle
 import com.mozhimen.kotlin.utilk.bases.BaseUtilK
+import com.mozhimen.kotlin.utilk.commons.IUtilK
 
 /**
  * @ClassName BaseWakeBefDestroyLifecycleObserver
@@ -19,7 +20,7 @@ import com.mozhimen.kotlin.utilk.bases.BaseUtilK
 @OApiCall_BindViewLifecycle
 @OApiCall_BindLifecycle
 @OApiInit_ByLazy
-open class BaseWakeBefDestroyLifecycleObserver : IDefaultLifecycleObserver, BaseUtilK() {
+open class BaseWakeBefDestroyLifecycleObserver : IDefaultLifecycleObserver, IUtilK {
 
     @CallSuper
     override fun bindLifecycle(owner: LifecycleOwner) {

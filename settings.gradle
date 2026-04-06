@@ -19,19 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ASwiftKit"
-include ':blurk'
-include ':basick'
-include ':basick:test'
-include ':xmlk'
-include ':xmlk:test'
-include ':composek'
-include ':composek:test'
-include ':servicek'
-include ':uik:databinding'
-include ':uik:databinding:test'
-include ':uik:compose'
-include ':proguardk'
+
 //ALibKit_Google
 include ":ALibKit_Google"
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
@@ -63,5 +51,19 @@ include ":AXmlKit"
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
 include ':AXmlKit:layoutk:magnet'
 include ':AXmlKit:basic'
+rootProject.name = "ASwiftKit"
+include ':blurk'
+include ':basick'
+include ':basick:test'
+include ':xmlk'
+include ':xmlk:test'
+include ':composek'
+include ':composek:test'
+include ':servicek'
+include ':uik:databinding'
+include ':uik:databinding:test'
+include ':uik:compose'
+include ':proguardk'
 include ':uik:compose:test'
 include ':uik'
+include ':servicek:aidl'

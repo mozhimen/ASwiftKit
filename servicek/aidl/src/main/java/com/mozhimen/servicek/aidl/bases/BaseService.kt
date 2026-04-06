@@ -1,13 +1,13 @@
-package com.mozhimen.servicek.bases
+package com.mozhimen.servicek.aidl.bases
 
 import android.app.Service
 import android.os.RemoteCallbackList
 import android.os.RemoteException
-import com.mozhimen.servicek.commons.IBaseServiceConnListener
-import com.mozhimen.servicek.commons.IBaseServiceResListener
 import com.mozhimen.kotlin.elemk.commons.IA_Listener
 import com.mozhimen.kotlin.utilk.android.util.e
 import com.mozhimen.kotlin.utilk.commons.IUtilK
+import com.mozhimen.servicek.aidl.commons.IBaseServiceConnListener
+import com.mozhimen.servicek.aidl.commons.IBaseServiceResListener
 
 /**
  * @ClassName BaseService

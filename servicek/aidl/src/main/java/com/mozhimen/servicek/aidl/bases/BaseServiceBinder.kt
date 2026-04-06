@@ -1,8 +1,8 @@
-package com.mozhimen.servicek.bases
+package com.mozhimen.servicek.aidl.bases
 
 import android.os.RemoteCallbackList
-import com.mozhimen.servicek.commons.IBaseServiceConnListener
-import com.mozhimen.servicek.commons.IBaseServiceResListener
+import com.mozhimen.servicek.aidl.commons.IBaseServiceConnListener
+import com.mozhimen.servicek.aidl.commons.IBaseServiceResListener
 
 /**
  * @ClassName BaseServiceBinder

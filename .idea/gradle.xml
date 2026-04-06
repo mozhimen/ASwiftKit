@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/composek/test" />
             <option value="$PROJECT_DIR$/proguardk" />
             <option value="$PROJECT_DIR$/servicek" />
+            <option value="$PROJECT_DIR$/servicek/aidl" />
             <option value="$PROJECT_DIR$/uik" />
             <option value="$PROJECT_DIR$/uik/compose" />
             <option value="$PROJECT_DIR$/uik/compose/test" />
@@ -46,7 +47,6 @@
             <option value="$PROJECT_DIR$/../KUtilKit/kotlin" />
           </set>
         </option>
-        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

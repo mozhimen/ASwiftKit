@@ -1,4 +1,4 @@
-package com.mozhimen.servicek.commons
+package com.mozhimen.servicek.aidl.commons
 
 /**
  * @ClassName IServiceProxy
