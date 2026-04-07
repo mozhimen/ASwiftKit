@@ -19,9 +19,9 @@
             <option value="$PROJECT_DIR$/../ALibKit_Jetpack" />
             <option value="$PROJECT_DIR$/../ALibKit_Jetpack/annotation" />
             <option value="$PROJECT_DIR$/../ALibKit_Jetpack/core" />
-            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/databinding" />
-            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/lifecycle_runtime_compose" />
-            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/lifecycle_viewmodel_compose" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/databinding-bom" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/lifecycle-runtime_compose" />
+            <option value="$PROJECT_DIR$/../ALibKit_Jetpack/lifecycle-viewmodel_compose" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/basick" />
             <option value="$PROJECT_DIR$/basick/test" />

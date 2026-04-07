@@ -57,54 +57,50 @@ android {
 }
 
 dependencies {
-    //////////////////////////////////////////////////////////////////
-    //mine
     //util
-    if (rootProject.name == "KUtilKit") {
-        api project(':android')
-    } else {
-        api project(':KUtilKit:android')
-    }
-
-    //jetbrains
-    //stdlib
-    api project(':ALibKit_Jetbrains:kotlin_stdlib')//"org.jetbrains.kotlin:kotlin-stdlib:1.9.25"
+//    if (rootProject.name == "KUtilKit") {
+//        api project(':android')
+//    } else {
+//        api project(':KUtilKit:android')
+//    }
 
     //coroutine
-    api project(':ALibKit_Jetbrains:kotlinx_coroutines')
+//    api project(':ALibKit_Jetbrains:kotlinx_coroutines')
+
+    //////////////////////////////////////////////////////////////////
+    //util
+    api 'com.github.mozhimen.KUtilKit:android:0.0.2'
+
+    //coroutine
+    api 'com.github.mozhimen.ALibKit_Jetbrains:kotlinx-coroutines-bom:0.0.2'
 
     //jetpack
     //multidex
-    api 'androidx.multidex:multidex:2.0.1'
+    api 'com.github.mozhimen.ALibKit_Jetpack:multidex:0.0.7'
 
     //core
-    api 'androidx.appcompat:appcompat:1.6.1'
-    api 'androidx.core:core-ktx:1.12.0'//1.10.1
-    api 'androidx.activity:activity:1.7.2'
-    api 'androidx.activity:activity-ktx:1.7.2'
-    api 'androidx.fragment:fragment:1.6.2'
-    api 'androidx.fragment:fragment-ktx:1.6.2'
+    api 'com.github.mozhimen.ALibKit_Jetpack:appcompat:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:core-bom:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:activity-bom:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:fragment-bom:0.0.7'
 
     //lifecycle
-    //api "androidx.lifecycle:lifecycle-extensions:2.7.0"// lifecycle,livedata,viewmodel
     //lifecycle-lifecycle
-    api "androidx.lifecycle:lifecycle-common-java8:2.7.0"// 如果用Java8, 用于替代compiler
-    api "androidx.lifecycle:lifecycle-runtime:2.7.0"// lifecycle
-    api "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
-    api "androidx.lifecycle:lifecycle-service:2.7.0"// optional - helpers for implementing LifecycleOwner in a Service
-    api "androidx.lifecycle:lifecycle-process:2.7.0"// optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-common_java8:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-runtime-bom:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-service:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-process:0.0.7'
 
     //lifecycle-livedata
-    api 'androidx.lifecycle:lifecycle-livedata:2.7.0'// livedata
-    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
-    api "androidx.lifecycle:lifecycle-reactivestreams:2.7.0"//对 LiveData 的 ReactiveStreams 支持
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-livedata-bom:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-reactivestreams:0.0.7'
 
     //lifecycle-viewmodel
-    api 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'// viewmodel
-    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
-    api "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0"
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-viewmodel-bom:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-viewmodel_savedstate:0.0.7'
 
     //////////////////////////////////////////////////////////////////
+
     //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

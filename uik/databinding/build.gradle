@@ -40,9 +40,9 @@ dependencies {
     }
     //databinding
     if (rootProject.name == "ALibKit_Jetpack") {
-        api project(":databinding")
+        api project(":databinding-bom")
     }else{
-        api project(":ALibKit_Jetpack:databinding")
+        api project(":ALibKit_Jetpack:databinding-bom")
     }
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
