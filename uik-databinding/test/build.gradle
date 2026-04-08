@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.uik.compose.test'
+    namespace 'com.mozhimen.uik.databinding.test'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.mozhimen.uik.compose.test"
+        applicationId "com.mozhimen.uik.databinding.test"
         minSdk 21
         targetSdk 34
         versionCode 1
@@ -30,14 +30,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = "1.5.15"
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
-    implementation project(':basick')
-    implementation project(':uik:compose')
-
+    implementation project(':uik-databinding')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

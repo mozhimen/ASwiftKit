@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-    implementation project(':uik:databinding')
+    implementation project(':uik-databinding')
     implementation project(':xmlk')
 
     //test

@@ -69,7 +69,7 @@ dependencies {
 
     //////////////////////////////////////////////////////////////////
     //util
-    api 'com.github.mozhimen.KUtilKit:android:0.0.2'
+    api 'com.github.mozhimen.KUtilKit:android:0.0.3'
 
     //coroutine
     api 'com.github.mozhimen.ALibKit_Jetbrains:kotlinx-coroutines-bom:0.0.2'
