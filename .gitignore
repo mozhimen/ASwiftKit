@@ -19,3 +19,6 @@ local.properties
 *.class
 .idea/misc.xml
 .idea/misc.xml
+.idea/compiler.xml
+.idea/compiler.xml
+.idea/gradle.xml

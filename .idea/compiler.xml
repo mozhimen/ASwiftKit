@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel target="17">
       <module name="ASwiftKit.ADslKit.dslk_anko" target="17" />
+      <module name="ASwiftKit.ALibKit_Google.material" target="17" />
+      <module name="ASwiftKit.ALibKit_Jetpack.annotation" target="17" />
       <module name="ASwiftKit.ALibKit_Jetpack.databinding" target="17" />
+      <module name="ASwiftKit.ALibKit_Jetpack.databinding-bom" target="17" />
+      <module name="ASwiftKit.ALibKit_Jetpack.lifecycle-runtime_compose" target="17" />
+      <module name="ASwiftKit.ALibKit_Jetpack.lifecycle-viewmodel_compose" target="17" />
       <module name="ASwiftKit.ALibKit_Jetpack.lifecycle_runtime_compose" target="17" />
       <module name="ASwiftKit.ALibKit_Jetpack.lifecycle_viewmodel_compose" target="17" />
       <module name="ASwiftKit.AXmlKit.layoutk_magnet" target="17" />
-      <module name="ASwiftKit.basick.test" target="17" />
       <module name="ASwiftKit.basick_test" target="17" />
       <module name="ASwiftKit.bindk" target="17" />
       <module name="ASwiftKit.bindk_test" target="17" />
-      <module name="ASwiftKit.composek.test" target="17" />
       <module name="ASwiftKit.composek_test" target="17" />
       <module name="ASwiftKit.servicek.aidl" target="17" />
-      <module name="ASwiftKit.uik-compose.test" target="17" />
-      <module name="ASwiftKit.uik-databinding.test" target="17" />
       <module name="ASwiftKit.uik.compose" target="17" />
       <module name="ASwiftKit.uik.compose.test" target="17" />
       <module name="ASwiftKit.uik.databinding" target="17" />

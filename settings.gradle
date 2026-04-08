@@ -19,29 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-
-//ALibKit_Google
-include ":ALibKit_Google"
-project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
-include ':ALibKit_Google:material'
-//ALibKit_Jetbrains
-include ":ALibKit_Jetbrains"
-project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
-include ':ALibKit_Jetbrains:kotlin_stdlib'
-include ':ALibKit_Jetbrains:kotlinx_coroutines'
-//ALibKit_Jetpack
-include ":ALibKit_Jetpack"
-project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
-include ':ALibKit_Jetpack:databinding-bom'
-include ':ALibKit_Jetpack:annotation'
-include ':ALibKit_Jetpack:core'
-include ':ALibKit_Jetpack:lifecycle-viewmodel_compose'
-include ':ALibKit_Jetpack:lifecycle-runtime_compose'
-//KUtilKit
-include ":KUtilKit"
-project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:android'
-include ':KUtilKit:kotlin'
 //ADslKit
 include ":ADslKit"
 project(':ADslKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ADslKit")
@@ -54,16 +31,16 @@ include ':AXmlKit:basic'
 rootProject.name = "ASwiftKit"
 include ':basick'
 include ':blurk'
-//include ':basick:test'
+include ':basick:test'
 include ':composek'
-//include ':composek:test'
+include ':composek:test'
 include ':proguardk'
 include ':servicek'
 include ':servicek-aidl'
 include ':uik'
 include ':uik-compose'
-//include ':uik-compose:test'
+include ':uik-compose:test'
 include ':uik-databinding'
-//include ':uik-databinding:test'
+include ':uik-databinding:test'
 include ':xmlk'
 include ':xmlk:test'
