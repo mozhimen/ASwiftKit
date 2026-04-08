@@ -39,8 +39,8 @@ dependencies {
         api project(/*project.path.replace(project.name,'')+*/":ASwiftKit:basick")
         api project(/*project.path.replace(project.name,'')+*/":ASwiftKit:composek")
     }
-    api project(':ALibKit_Jetpack:lifecycle-viewmodel_compose')
-    api project(':ALibKit_Jetpack:lifecycle-runtime_compose')
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-viewmodel_compose:0.0.7'
+    api 'com.github.mozhimen.ALibKit_Jetpack:lifecycle-runtime_compose:0.0.7'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
