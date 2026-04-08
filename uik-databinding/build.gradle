@@ -39,11 +39,8 @@ dependencies {
         api project(/*project.path.replace(project.name,'')+*/ ":ASwiftKit:xmlk")
     }
     //databinding
-    if (rootProject.name == "ALibKit_Jetpack") {
-        api project(":databinding-bom")
-    }else{
-        api project(":ALibKit_Jetpack:databinding-bom")
-    }
+    api 'com.github.mozhimen.ALibKit_Jetpack:databinding-bom:0.0.7'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
