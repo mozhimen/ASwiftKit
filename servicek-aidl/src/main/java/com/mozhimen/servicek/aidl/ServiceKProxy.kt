@@ -11,6 +11,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.mozhimen.basick.bases.BaseWakeBefDestroyLifecycleObserver
 import com.mozhimen.basick.utils.runOnMainThread
 import com.mozhimen.kotlin.lintk.optins.api.OApiCall_BindLifecycle
+import com.mozhimen.kotlin.lintk.optins.api.OApiCall_BindViewLifecycle
 import com.mozhimen.kotlin.lintk.optins.api.OApiInit_ByLazy
 import com.mozhimen.kotlin.utilk.android.util.e
 import com.mozhimen.servicek.aidl.commons.IBaseServiceConnListener
@@ -24,6 +25,7 @@ import com.mozhimen.servicek.aidl.commons.IServiceKProxy
  * @Version 1.0
  */
 
+@OApiCall_BindViewLifecycle
 @OApiCall_BindLifecycle
 @OApiInit_ByLazy
 open class ServiceKProxy<A>(
