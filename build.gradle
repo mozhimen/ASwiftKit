@@ -56,7 +56,7 @@ subprojects {
 
                             apiDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
-                                def groupId = dep.group ?: project.group.toString()
+                                def groupId = dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
                                 depNode.appendNode("groupId",groupId)
                                 depNode.appendNode("artifactId", dep.name)
                                 depNode.appendNode("version", dep.version ?: "")
@@ -65,7 +65,7 @@ subprojects {
 
                             implDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
-                                def groupId = dep.group ?: project.group.toString()
+                                def groupId = dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
                                 depNode.appendNode("groupId", groupId)
                                 depNode.appendNode("artifactId", dep.name)
                                 depNode.appendNode("version", dep.version ?: "")
@@ -102,7 +102,7 @@ subprojects {
 
                                     apiDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
-                                        def groupId = dep.group ?: project.group.toString()
+                                        def groupId = dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
                                         depNode.appendNode("groupId", groupId)
                                         depNode.appendNode("artifactId", dep.name)
                                         depNode.appendNode("version", dep.version ?: "")
@@ -111,7 +111,7 @@ subprojects {
 
                                     implDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
-                                        def groupId = dep.group ?: project.group.toString()
+                                        def groupId = dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
                                         depNode.appendNode("groupId", groupId)
                                         depNode.appendNode("artifactId", dep.name)
                                         depNode.appendNode("version", dep.version ?: "")
