@@ -34,7 +34,7 @@ task clean(type: Delete) {
 
 subprojects {
     apply plugin: 'maven-publish'
-    def versionGlobal = '2.1.0'
+    def versionGlobal = '2.1.3'
 
     afterEvaluate { project ->
 
@@ -56,7 +56,8 @@ subprojects {
 
                             apiDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
-                                depNode.appendNode("groupId", dep.group ?: "")
+                                def groupId = dep.group ?: project.group.toString()
+                                depNode.appendNode("groupId",groupId)
                                 depNode.appendNode("artifactId", dep.name)
                                 depNode.appendNode("version", dep.version ?: "")
                                 depNode.appendNode("scope", "compile")
@@ -64,7 +65,8 @@ subprojects {
 
                             implDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
-                                depNode.appendNode("groupId", dep.group ?: "")
+                                def groupId = dep.group ?: project.group.toString()
+                                depNode.appendNode("groupId", groupId)
                                 depNode.appendNode("artifactId", dep.name)
                                 depNode.appendNode("version", dep.version ?: "")
                                 depNode.appendNode("scope", "runtime")
@@ -100,7 +102,8 @@ subprojects {
 
                                     apiDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
-                                        depNode.appendNode("groupId", dep.group ?: "")
+                                        def groupId = dep.group ?: project.group.toString()
+                                        depNode.appendNode("groupId", groupId)
                                         depNode.appendNode("artifactId", dep.name)
                                         depNode.appendNode("version", dep.version ?: "")
                                         depNode.appendNode("scope", "compile")
@@ -108,7 +111,8 @@ subprojects {
 
                                     implDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
-                                        depNode.appendNode("groupId", dep.group ?: "")
+                                        def groupId = dep.group ?: project.group.toString()
+                                        depNode.appendNode("groupId", groupId)
                                         depNode.appendNode("artifactId", dep.name)
                                         depNode.appendNode("version", dep.version ?: "")
                                         depNode.appendNode("scope", "runtime")
