@@ -34,6 +34,7 @@ task clean(type: Delete) {
 
 subprojects {
     apply plugin: 'maven-publish'
+    def versionGlobal = '2.0.7'
     afterEvaluate { project ->
         if (project.plugins.hasPlugin('java-library')) {
             publishing {
@@ -42,7 +43,29 @@ subprojects {
                         from components.java
                         groupId = 'com.github.mozhimen'
                         artifactId = project.name
-                        version = '2.0.6'
+                        version = versionGlobal
+
+                        pom {
+                            withXml {
+                                asNode().appendNode("dependencies").apply {
+                                    project.configurations.api.allDependencies.each { dep ->
+                                        def depNode = dependenciesNode.appendNode("dependency")
+                                        depNode.appendNode("groupId", dep.group)
+                                        depNode.appendNode("artifactId", dep.name)
+                                        depNode.appendNode("version", dep.version)
+                                        depNode.appendNode("scope", "compile")
+                                    }
+
+                                    project.configurations.implementation.allDependencies.each { dep ->
+                                        def depNode = dependenciesNode.appendNode("dependency")
+                                        depNode.appendNode("groupId", dep.group)
+                                        depNode.appendNode("artifactId", dep.name)
+                                        depNode.appendNode("version", dep.version)
+                                        depNode.appendNode("scope", "runtime")
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -56,11 +79,33 @@ subprojects {
                             create("release", MavenPublication) {
                                 groupId = 'com.github.mozhimen'
                                 artifactId = project.name
-                                version = '2.0.6'
+                                version = versionGlobal
 
                                 // 使用任务输出的 AAR 文件
                                 artifact(releaseAar) {
                                     builtBy releaseAar
+                                }
+
+                                pom {
+                                    withXml {
+                                        def dependenciesNode = asNode().appendNode("dependencies")
+
+                                        project.configurations.api.allDependencies.each { dep ->
+                                            def depNode = dependenciesNode.appendNode("dependency")
+                                            depNode.appendNode("groupId", dep.group)
+                                            depNode.appendNode("artifactId", dep.name)
+                                            depNode.appendNode("version", dep.version)
+                                            depNode.appendNode("scope", "compile")
+                                        }
+
+                                        project.configurations.implementation.allDependencies.each { dep ->
+                                            def depNode = dependenciesNode.appendNode("dependency")
+                                            depNode.appendNode("groupId", dep.group)
+                                            depNode.appendNode("artifactId", dep.name)
+                                            depNode.appendNode("version", dep.version)
+                                            depNode.appendNode("scope", "runtime")
+                                        }
+                                    }
                                 }
                             }
                         }
