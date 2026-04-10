@@ -34,9 +34,14 @@ task clean(type: Delete) {
 
 subprojects {
     apply plugin: 'maven-publish'
-    def versionGlobal = '2.0.8'
+    def versionGlobal = '2.1.0'
+
     afterEvaluate { project ->
+
         if (project.plugins.hasPlugin('java-library')) {
+            def apiDeps = project.configurations.api.allDependencies.toList()
+            def implDeps = project.configurations.implementation.allDependencies.toList()
+
             publishing {
                 publications {
                     create("mavenJava", MavenPublication) {
@@ -45,11 +50,9 @@ subprojects {
                         artifactId = project.name
                         version = versionGlobal
 
-                        def apiDeps = project.configurations.api.allDependencies.toList()
-                        def implDeps = project.configurations.implementation.allDependencies.toList()
-
                         pom.withXml {
                             def dependenciesNode = asNode().appendNode("dependencies")
+
                             apiDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
                                 depNode.appendNode("groupId", dep.group)
@@ -57,6 +60,7 @@ subprojects {
                                 depNode.appendNode("version", dep.version)
                                 depNode.appendNode("scope", "compile")
                             }
+
                             implDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
                                 depNode.appendNode("groupId", dep.group)
@@ -68,10 +72,16 @@ subprojects {
                     }
                 }
             }
-        } else if (project.plugins.hasPlugin('com.android.library')) {
+        }
+
+        else if (project.plugins.hasPlugin('com.android.library')) {
+            def apiDeps = project.configurations.api.allDependencies.toList()
+            def implDeps = project.configurations.implementation.allDependencies.toList()
+
             project.android.libraryVariants.all { variant ->
                 if (variant.buildType.name == "release") {
                     def releaseAar = project.tasks.named("bundle${variant.name.capitalize()}Aar")
+
                     publishing {
                         publications {
                             create("release", MavenPublication) {
@@ -83,11 +93,9 @@ subprojects {
                                     builtBy releaseAar
                                 }
 
-                                def apiDeps = project.configurations.api.allDependencies.toList()
-                                def implDeps = project.configurations.implementation.allDependencies.toList()
-
                                 pom.withXml {
                                     def dependenciesNode = asNode().appendNode("dependencies")
+
                                     apiDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
                                         depNode.appendNode("groupId", dep.group)
@@ -95,6 +103,7 @@ subprojects {
                                         depNode.appendNode("version", dep.version)
                                         depNode.appendNode("scope", "compile")
                                     }
+
                                     implDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
                                         depNode.appendNode("groupId", dep.group)
