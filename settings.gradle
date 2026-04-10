@@ -4,6 +4,7 @@ dependencyResolutionManagement {
         mavenLocal()
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -14,7 +15,6 @@ dependencyResolutionManagement {
         maven { url 'https://gitee.com/liuchaoya/libcommon/raw/master/repository/' }
         maven { url "https://repo.eclipse.org/content/repositories/paho-snapshots/" }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url "https://jitpack.io" }
         maven { url 'https://www.jitpack.io' }
     }
 }
@@ -23,11 +23,6 @@ dependencyResolutionManagement {
 include ":ADslKit"
 project(':ADslKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ADslKit")
 include ':ADslKit:anko'
-//AXmlKit
-include ":AXmlKit"
-project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
-include ':AXmlKit:layoutk:magnet'
-include ':AXmlKit:basic'
 rootProject.name = "ASwiftKit"
 include ':basick'
 include ':blurk'

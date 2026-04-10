@@ -58,17 +58,6 @@ android {
 
 dependencies {
     //util
-//    if (rootProject.name == "KUtilKit") {
-//        api project(':android')
-//    } else {
-//        api project(':KUtilKit:android')
-//    }
-
-    //coroutine
-//    api project(':ALibKit_Jetbrains:kotlinx_coroutines')
-
-    //////////////////////////////////////////////////////////////////
-    //util
     api 'com.github.mozhimen.KUtilKit:android:0.0.3'
 
     //coroutine
