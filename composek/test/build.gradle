@@ -50,7 +50,7 @@ dependencies {
     implementation project(':composek')
     implementation project(':basick')
     implementation project(':ADslKit:anko')
-    implementation 'com.github.mozhimen.AXmlKit:layoutk-magnet:0.0.1'
+    implementation 'com.github.mozhimen.AXmlKit:layoutk-magnet:0.0.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'

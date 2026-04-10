@@ -31,3 +31,42 @@ buildscript {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+subprojects {
+    apply plugin: 'maven-publish'
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin('java-library')) {
+            publishing {
+                publications {
+                    create("mavenJava", MavenPublication) {
+                        from components.java
+                        groupId = 'com.github.mozhimen'
+                        artifactId = project.name
+                        version = '2.0.5'
+                    }
+                }
+            }
+        }
+        else if (project.plugins.hasPlugin('com.android.library')) {
+            project.android.libraryVariants.all { variant ->
+                if (variant.buildType.name == "release") {
+                    def releaseAar = project.tasks.named("bundle${variant.name.capitalize()}Aar")
+                    publishing {
+                        publications {
+                            create("release", MavenPublication) {
+                                groupId = 'com.github.mozhimen'
+                                artifactId = project.name
+                                version = '2.0.5'
+
+                                // 使用任务输出的 AAR 文件
+                                artifact(releaseAar) {
+                                    builtBy releaseAar
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
