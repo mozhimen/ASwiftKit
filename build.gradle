@@ -45,24 +45,24 @@ subprojects {
                         artifactId = project.name
                         version = versionGlobal
 
-                        pom {
-                            withXml {
-                                def dependenciesNode = asNode().appendNode("dependencies")
-                                project.configurations.api.allDependencies.each { dep ->
-                                    def depNode = dependenciesNode.appendNode("dependency")
-                                    depNode.appendNode("groupId", dep.group)
-                                    depNode.appendNode("artifactId", dep.name)
-                                    depNode.appendNode("version", dep.version)
-                                    depNode.appendNode("scope", "compile")
-                                }
+                        def apiDeps = project.configurations.api.allDependencies.toList()
+                        def implDeps = project.configurations.implementation.allDependencies.toList()
 
-                                project.configurations.implementation.allDependencies.each { dep ->
-                                    def depNode = dependenciesNode.appendNode("dependency")
-                                    depNode.appendNode("groupId", dep.group)
-                                    depNode.appendNode("artifactId", dep.name)
-                                    depNode.appendNode("version", dep.version)
-                                    depNode.appendNode("scope", "runtime")
-                                }
+                        pom.withXml {
+                            def dependenciesNode = asNode().appendNode("dependencies")
+                            apiDeps.each { dep ->
+                                def depNode = dependenciesNode.appendNode("dependency")
+                                depNode.appendNode("groupId", dep.group)
+                                depNode.appendNode("artifactId", dep.name)
+                                depNode.appendNode("version", dep.version)
+                                depNode.appendNode("scope", "compile")
+                            }
+                            implDeps.each { dep ->
+                                def depNode = dependenciesNode.appendNode("dependency")
+                                depNode.appendNode("groupId", dep.group)
+                                depNode.appendNode("artifactId", dep.name)
+                                depNode.appendNode("version", dep.version)
+                                depNode.appendNode("scope", "runtime")
                             }
                         }
                     }
@@ -83,24 +83,24 @@ subprojects {
                                     builtBy releaseAar
                                 }
 
-                                pom {
-                                    withXml {
-                                        def dependenciesNode = asNode().appendNode("dependencies")
-                                        project.configurations.api.allDependencies.each { dep ->
-                                            def depNode = dependenciesNode.appendNode("dependency")
-                                            depNode.appendNode("groupId", dep.group)
-                                            depNode.appendNode("artifactId", dep.name)
-                                            depNode.appendNode("version", dep.version)
-                                            depNode.appendNode("scope", "compile")
-                                        }
+                                def apiDeps = project.configurations.api.allDependencies.toList()
+                                def implDeps = project.configurations.implementation.allDependencies.toList()
 
-                                        project.configurations.implementation.allDependencies.each { dep ->
-                                            def depNode = dependenciesNode.appendNode("dependency")
-                                            depNode.appendNode("groupId", dep.group)
-                                            depNode.appendNode("artifactId", dep.name)
-                                            depNode.appendNode("version", dep.version)
-                                            depNode.appendNode("scope", "runtime")
-                                        }
+                                pom.withXml {
+                                    def dependenciesNode = asNode().appendNode("dependencies")
+                                    apiDeps.each { dep ->
+                                        def depNode = dependenciesNode.appendNode("dependency")
+                                        depNode.appendNode("groupId", dep.group)
+                                        depNode.appendNode("artifactId", dep.name)
+                                        depNode.appendNode("version", dep.version)
+                                        depNode.appendNode("scope", "compile")
+                                    }
+                                    implDeps.each { dep ->
+                                        def depNode = dependenciesNode.appendNode("dependency")
+                                        depNode.appendNode("groupId", dep.group)
+                                        depNode.appendNode("artifactId", dep.name)
+                                        depNode.appendNode("version", dep.version)
+                                        depNode.appendNode("scope", "runtime")
                                     }
                                 }
                             }
