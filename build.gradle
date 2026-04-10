@@ -42,7 +42,7 @@ subprojects {
                         from components.java
                         groupId = 'com.github.mozhimen'
                         artifactId = project.name
-                        version = '2.0.5'
+                        version = '2.0.6'
                     }
                 }
             }
@@ -56,7 +56,7 @@ subprojects {
                             create("release", MavenPublication) {
                                 groupId = 'com.github.mozhimen'
                                 artifactId = project.name
-                                version = '2.0.5'
+                                version = '2.0.6'
 
                                 // 使用任务输出的 AAR 文件
                                 artifact(releaseAar) {

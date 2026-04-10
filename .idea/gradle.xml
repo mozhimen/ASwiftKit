@@ -9,8 +9,6 @@
         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/../ADslKit" />
-            <option value="$PROJECT_DIR$/../ADslKit/anko" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/basick" />
             <option value="$PROJECT_DIR$/basick/test" />
@@ -27,10 +25,6 @@
             <option value="$PROJECT_DIR$/uik-databinding/test" />
             <option value="$PROJECT_DIR$/xmlk" />
             <option value="$PROJECT_DIR$/xmlk/test" />
-            <option value="$PROJECT_DIR$/../AXmlKit" />
-            <option value="$PROJECT_DIR$/../AXmlKit/basic" />
-            <option value="$PROJECT_DIR$/../AXmlKit/layoutk" />
-            <option value="$PROJECT_DIR$/../AXmlKit/layoutk/magnet" />
           </set>
         </option>
       </GradleProjectSettings>

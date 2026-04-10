@@ -19,10 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-//ADslKit
-include ":ADslKit"
-project(':ADslKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ADslKit")
-include ':ADslKit:anko'
 rootProject.name = "ASwiftKit"
 include ':basick'
 include ':blurk'
