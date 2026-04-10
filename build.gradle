@@ -34,7 +34,7 @@ task clean(type: Delete) {
 
 subprojects {
     apply plugin: 'maven-publish'
-    def versionGlobal = '2.0.7'
+    def versionGlobal = '2.0.8'
     afterEvaluate { project ->
         if (project.plugins.hasPlugin('java-library')) {
             publishing {
@@ -47,30 +47,28 @@ subprojects {
 
                         pom {
                             withXml {
-                                asNode().appendNode("dependencies").apply {
-                                    project.configurations.api.allDependencies.each { dep ->
-                                        def depNode = dependenciesNode.appendNode("dependency")
-                                        depNode.appendNode("groupId", dep.group)
-                                        depNode.appendNode("artifactId", dep.name)
-                                        depNode.appendNode("version", dep.version)
-                                        depNode.appendNode("scope", "compile")
-                                    }
+                                def dependenciesNode = asNode().appendNode("dependencies")
+                                project.configurations.api.allDependencies.each { dep ->
+                                    def depNode = dependenciesNode.appendNode("dependency")
+                                    depNode.appendNode("groupId", dep.group)
+                                    depNode.appendNode("artifactId", dep.name)
+                                    depNode.appendNode("version", dep.version)
+                                    depNode.appendNode("scope", "compile")
+                                }
 
-                                    project.configurations.implementation.allDependencies.each { dep ->
-                                        def depNode = dependenciesNode.appendNode("dependency")
-                                        depNode.appendNode("groupId", dep.group)
-                                        depNode.appendNode("artifactId", dep.name)
-                                        depNode.appendNode("version", dep.version)
-                                        depNode.appendNode("scope", "runtime")
-                                    }
+                                project.configurations.implementation.allDependencies.each { dep ->
+                                    def depNode = dependenciesNode.appendNode("dependency")
+                                    depNode.appendNode("groupId", dep.group)
+                                    depNode.appendNode("artifactId", dep.name)
+                                    depNode.appendNode("version", dep.version)
+                                    depNode.appendNode("scope", "runtime")
                                 }
                             }
                         }
                     }
                 }
             }
-        }
-        else if (project.plugins.hasPlugin('com.android.library')) {
+        } else if (project.plugins.hasPlugin('com.android.library')) {
             project.android.libraryVariants.all { variant ->
                 if (variant.buildType.name == "release") {
                     def releaseAar = project.tasks.named("bundle${variant.name.capitalize()}Aar")
@@ -81,7 +79,6 @@ subprojects {
                                 artifactId = project.name
                                 version = versionGlobal
 
-                                // 使用任务输出的 AAR 文件
                                 artifact(releaseAar) {
                                     builtBy releaseAar
                                 }
@@ -89,7 +86,6 @@ subprojects {
                                 pom {
                                     withXml {
                                         def dependenciesNode = asNode().appendNode("dependencies")
-
                                         project.configurations.api.allDependencies.each { dep ->
                                             def depNode = dependenciesNode.appendNode("dependency")
                                             depNode.appendNode("groupId", dep.group)
@@ -115,3 +111,4 @@ subprojects {
         }
     }
 }
+
