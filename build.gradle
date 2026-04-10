@@ -39,9 +39,6 @@ subprojects {
     afterEvaluate { project ->
 
         if (project.plugins.hasPlugin('java-library')) {
-            def apiDeps = project.configurations.api.allDependencies.toList()
-            def implDeps = project.configurations.implementation.allDependencies.toList()
-
             publishing {
                 publications {
                     create("mavenJava", MavenPublication) {
@@ -53,19 +50,23 @@ subprojects {
                         pom.withXml {
                             def dependenciesNode = asNode().appendNode("dependencies")
 
+                            // 在执行时获取依赖，而不是配置时
+                            def apiDeps = project.configurations.api.allDependencies.toList()
+                            def implDeps = project.configurations.implementation.allDependencies.toList()
+
                             apiDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
-                                depNode.appendNode("groupId", dep.group)
+                                depNode.appendNode("groupId", dep.group ?: "")
                                 depNode.appendNode("artifactId", dep.name)
-                                depNode.appendNode("version", dep.version)
+                                depNode.appendNode("version", dep.version ?: "")
                                 depNode.appendNode("scope", "compile")
                             }
 
                             implDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
-                                depNode.appendNode("groupId", dep.group)
+                                depNode.appendNode("groupId", dep.group ?: "")
                                 depNode.appendNode("artifactId", dep.name)
-                                depNode.appendNode("version", dep.version)
+                                depNode.appendNode("version", dep.version ?: "")
                                 depNode.appendNode("scope", "runtime")
                             }
                         }
@@ -75,9 +76,6 @@ subprojects {
         }
 
         else if (project.plugins.hasPlugin('com.android.library')) {
-            def apiDeps = project.configurations.api.allDependencies.toList()
-            def implDeps = project.configurations.implementation.allDependencies.toList()
-
             project.android.libraryVariants.all { variant ->
                 if (variant.buildType.name == "release") {
                     def releaseAar = project.tasks.named("bundle${variant.name.capitalize()}Aar")
@@ -96,19 +94,23 @@ subprojects {
                                 pom.withXml {
                                     def dependenciesNode = asNode().appendNode("dependencies")
 
+                                    // 在执行时获取依赖
+                                    def apiDeps = project.configurations.api.allDependencies.toList()
+                                    def implDeps = project.configurations.implementation.allDependencies.toList()
+
                                     apiDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
-                                        depNode.appendNode("groupId", dep.group)
+                                        depNode.appendNode("groupId", dep.group ?: "")
                                         depNode.appendNode("artifactId", dep.name)
-                                        depNode.appendNode("version", dep.version)
+                                        depNode.appendNode("version", dep.version ?: "")
                                         depNode.appendNode("scope", "compile")
                                     }
 
                                     implDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
-                                        depNode.appendNode("groupId", dep.group)
+                                        depNode.appendNode("groupId", dep.group ?: "")
                                         depNode.appendNode("artifactId", dep.name)
-                                        depNode.appendNode("version", dep.version)
+                                        depNode.appendNode("version", dep.version ?: "")
                                         depNode.appendNode("scope", "runtime")
                                     }
                                 }
