@@ -52,12 +52,15 @@ subprojects {
                             def root = asNode()
                             def dependenciesNode = root.dependencies ? root.dependencies[0] : root.appendNode('dependencies')
 
-                            // 在执行时获取依赖，而不是配置时
+                            def allDeps = []  // 收集 api + impl
                             def apiDeps = project.configurations.api.allDependencies.toList()
                             def implDeps = project.configurations.implementation.allDependencies.toList()
+                            allDeps.addAll(apiDeps)
+                            allDeps.addAll(implDeps)
 
-                            apiDeps.each { dep ->
-                                def depNode = dependenciesNode.appendNode("dependency")
+                            def addedDepSet = new HashSet<String>()
+
+                            allDeps.each { dep ->
                                 def groupId //= dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
                                 def version
                                 if(dep instanceof ProjectDependency){
@@ -67,29 +70,17 @@ subprojects {
                                     groupId = dep.group
                                     version = dep.version
                                 }
-                                depNode.appendNode("groupId",groupId)
-                                depNode.appendNode("artifactId", dep.name)
-                                depNode.appendNode("version",version)
-                                depNode.appendNode("scope", "compile")
+                                def scope = project.configurations.api.allDependencies.contains(dep) ? 'compile' : 'runtime'
 
-                                println "[POM DEBUG] runtime dependency -> groupId: $groupId, artifactId: ${dep.name}, version: $version"
-                            }
+                                def key = "${groupId}:${dep.name}:${version}:${scope}"
+                                if (addedDepSet.contains(key)) return
+                                addedDepSet.add(key)
 
-                            implDeps.each { dep ->
                                 def depNode = dependenciesNode.appendNode("dependency")
-                                def groupId //= dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
-                                def version
-                                if(dep instanceof ProjectDependency){
-                                    groupId = groupIdToPublished
-                                    version = versionToPublished
-                                }else{
-                                    groupId = dep.group
-                                    version = dep.version
-                                }
                                 depNode.appendNode("groupId",groupId)
                                 depNode.appendNode("artifactId", dep.name)
                                 depNode.appendNode("version",version)
-                                depNode.appendNode("scope", "compile")
+                                depNode.appendNode("scope",scope)
 
                                 println "[POM DEBUG] runtime dependency -> groupId: $groupId, artifactId: ${dep.name}, version: $version"
                             }
@@ -119,12 +110,15 @@ subprojects {
                                     def root = asNode()
                                     def dependenciesNode = root.dependencies ? root.dependencies[0] : root.appendNode('dependencies')
 
-                                    // 在执行时获取依赖
+                                    def allDeps = []  // 收集 api + impl
                                     def apiDeps = project.configurations.api.allDependencies.toList()
                                     def implDeps = project.configurations.implementation.allDependencies.toList()
+                                    allDeps.addAll(apiDeps)
+                                    allDeps.addAll(implDeps)
 
-                                    apiDeps.each { dep ->
-                                        def depNode = dependenciesNode.appendNode("dependency")
+                                    def addedDepSet = new HashSet<String>()
+
+                                    allDeps.each { dep ->
                                         def groupId //= dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
                                         def version
                                         if(dep instanceof ProjectDependency){
@@ -134,29 +128,17 @@ subprojects {
                                             groupId = dep.group
                                             version = dep.version
                                         }
-                                        depNode.appendNode("groupId",groupId)
-                                        depNode.appendNode("artifactId", dep.name)
-                                        depNode.appendNode("version",version)
-                                        depNode.appendNode("scope", "compile")
+                                        def scope = project.configurations.api.allDependencies.contains(dep) ? 'compile' : 'runtime'
 
-                                        println "[POM DEBUG] runtime dependency -> groupId: $groupId, artifactId: ${dep.name}, version: $version"
-                                    }
+                                        def key = "${groupId}:${dep.name}:${version}:${scope}"
+                                        if (addedDepSet.contains(key)) return
+                                        addedDepSet.add(key)
 
-                                    implDeps.each { dep ->
                                         def depNode = dependenciesNode.appendNode("dependency")
-                                        def groupId //= dep instanceof ProjectDependency ? project.rootProject.group.toString() : dep.group
-                                        def version
-                                        if(dep instanceof ProjectDependency){
-                                            groupId = groupIdToPublished
-                                            version = versionToPublished
-                                        }else{
-                                            groupId = dep.group
-                                            version = dep.version
-                                        }
                                         depNode.appendNode("groupId",groupId)
                                         depNode.appendNode("artifactId", dep.name)
                                         depNode.appendNode("version",version)
-                                        depNode.appendNode("scope", "compile")
+                                        depNode.appendNode("scope", scope)
 
                                         println "[POM DEBUG] runtime dependency -> groupId: $groupId, artifactId: ${dep.name}, version: $version"
                                     }
