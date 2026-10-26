@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace "com.mozhimen.basicktest"
+    namespace "com.mozhimen.basick.test"
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.mozhimen.basicktest"
+        applicationId "com.mozhimen.basick.test"
         minSdk 24
         targetSdk 25
         versionCode 1
@@ -40,9 +40,33 @@ android {
     }
 }
 
+configurations.configureEach {
+    resolutionStrategy.dependencySubstitution {
+        substitute module(
+                'com.github.mozhimen.ASwiftKit:basick'
+        ) using project(':basick')
+
+        substitute module(
+                'com.github.mozhimen.ASwiftKit:xmlk'
+        ) using project(':xmlk')
+
+        substitute module(
+                'com.github.mozhimen.ASwiftKit:uik'
+        ) using project(':uik')
+
+        substitute module(
+                'com.github.mozhimen.ASwiftKit:uik-databinding'
+        ) using project(':uik-databinding')
+    }
+}
+
 dependencies {
     implementation project(':uik-databinding')
     implementation project(':xmlk')
+    implementation 'com.github.mozhimen.AStackKit:stackk:0.0.1'
+    implementation 'com.github.mozhimen.AXmlKit:dialogk:0.0.7'
+    implementation 'com.github.mozhimen.AXmlKit:dialogk-databinding:0.0.7'
+    implementation 'com.github.mozhimen.AAnimKit:animk:0.0.1'
 
     //test
     testImplementation 'junit:junit:4.13.2'

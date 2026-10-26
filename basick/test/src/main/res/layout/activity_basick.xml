@@ -14,17 +14,28 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
+<!--            <com.google.android.material.button.MaterialButton
                 style="@style/BasicKStyle_Btn"
                 android:onClick="goManifestK"
                 android:text="goManifestK"
                 tools:ignore="HardcodedText,UsingOnClickInXml" />
 
-
             <com.google.android.material.button.MaterialButton
                 style="@style/BasicKStyle_Btn"
                 android:onClick="goTaskK"
                 android:text="goTaskK"
+                tools:ignore="HardcodedText,UsingOnClickInXml" />-->
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/BasicKStyle_Btn"
+                android:onClick="goBackPressed"
+                android:text="goBackPressed"
+                tools:ignore="HardcodedText,UsingOnClickInXml" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/BasicKStyle_Btn"
+                android:onClick="showDialog"
+                android:text="showDialog"
                 tools:ignore="HardcodedText,UsingOnClickInXml" />
 
         </LinearLayout>
